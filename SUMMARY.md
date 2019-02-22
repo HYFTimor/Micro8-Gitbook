@@ -116,5 +116,17 @@
     * 第一百一十课：窃取,伪造模拟各种windows访问令牌[token利用]---klion
     * 第一百一十一课：内网mssql完整利用流程 [ 基础篇 ]---klion
     * 第一百一十二课：利用Dropbox中转C2流量---klion
+    * 第一百一十三课：COM Hijacking---倾旋
+    * 第一百一十四课：渗透沉思录
+    * 第一百一十五课：使用CrackMapExec 进行 NTLM Hash传递攻击---倾旋
+    * 第一百一十六课：Windows域渗透 - 用户密码枚举---倾旋
+    * 第一百一十七课：Windows 本地特权提升技巧---倾旋
+    * 第一百一十八课：CVE-2017-11882钓鱼攻击---倾旋
+    * 第一百一十九课：全平台高性能加密隧道 ssf---klion
+    * 第一百二十课：win自带的高级网络配置管理工具深度应用 [ netsh ]---klion
+    * 第一百二十一课：http加密代理深度应用 [ abptts ]---klion
+    * 第一百二十二课：利用 ssh隧道实现内网断网机meterpreter反向上线---klion
+    * 第一百二十三课：利用ssh隧道将公网meterpreter弹至本地的msf中---klion
+    
 * 第三章：病（待更新...）
 
