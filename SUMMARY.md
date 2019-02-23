@@ -96,7 +96,7 @@
     * [第九十一课：从目标文件中做信息搜集第一季](Chapter1/91-100/91_从目标文件中做信息搜集第一季.md)  
     * [第九十二课：实战中的Payload应用](Chapter1/91-100/92_实战中的Payload应用.md)  
     * [第九十三课：与CrackMapExec结合攻击](Chapter1/91-100/93_与CrackMapExec结合攻击.md)  
-    * [第九十四课：基于实战中的small payload](Chapter1/91-100/94_基于实战中的small payload.md)  
+    * [第九十四课：基于实战中的small payload](Chapter1/91-100/94_基于实战中的small-payload.md)  
     * [第九十五课：基于Portfwd端口转发](Chapter1/91-100/95_基于Portfwd端口转发.md)  
     * [第九十六课：HTTP隧道ABPTTS第一季](Chapter1/91-100/96_HTTP隧道ABPTTS第一季.md)  
     * [第九十七课：MSF配置自定义Payload控制目标主机权限](Chapter1/91-100/97_MSF配置自定义Payload控制目标主机权限.md)  
