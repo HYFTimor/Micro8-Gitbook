@@ -1,21 +1,20 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
+
 
 **reDuh简介：**
 
 reDuh是sensepost由2008-07年发布，从本质上讲，可以将JSP/PHP/ASP/ASPX等页面上传到目标服务器，便可以访问该服务器后面的主机。
 
-BlackHat USA 2008介绍：
+BlackHat USA 2008介绍：  
 https://drive.google.com/open?id=1AqmtuBnHQJS-FjVHzJMNNWokda048By-
 
-Github：
+Github：  
 https://github.com/sensepost/reDuh
 
-**攻击机：** 
-192.168.1.5 Debian
+**攻击机：**   
+192.168.1.5 Debian  
 192.168.1.4 Windows 7
 
-**靶机：** 
+**靶机：**   
 192.168.1.119 Windows 2003
 
 **安装：**
@@ -36,7 +35,7 @@ README.markdown reDuhClient reDuhServers
 
 ![](media/853cde273f8ee0873156e9c624258201.jpg)
 
-**攻击机执行：**
+**攻击机执行：**  
 绑定端口：
 ```bash
 root@John:~/reDuh/reDuhClient/dist# java ‐jar reDuhClient.jar http://192.168.1.119/reDuh.aspx
@@ -47,9 +46,9 @@ root@John:~/reDuh/reDuhClient/dist# java ‐jar reDuhClient.jar http://192.168.1
 ```
 ![](media/2596f6edba3d76db9a416b2011e8fb9b.jpg)
 
-开启新terminal，建立隧道
-命令如下：
-[createTunnel][本地绑定端口]:127.0.0.1:[远程端口]
+开启新terminal，建立隧道  
+命令如下：  
+[createTunnel][本地绑定端口]:  127.0.0.1:[远程端口]  
 ```bash
 root@John:~# telnet 127.0.0.1 1010
 Trying 127.0.0.1...
