@@ -1,6 +1,3 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 MSF的exploit模块下是支持set payload的，同样在复杂的网络环境下，许多模块也同样支持自定义的payload。可以更好的配合第三方框架，如第十一课中提到的Veil-Evasion等。
 
 以exploit/windows/smb/psexec为demo。
@@ -44,7 +41,8 @@ EXE::CUSTOM => /var/www/html/bin_tcp_x86_53.exe
 ```
 ![](media/adf249249993b5500e984f8c8bc6eba2.jpg)
 
-靶机当前端口如下：
+靶机当前端口如下：  
+
 ![](media/7e2ed442134c4d03288e48471a79360d.jpg)
 
 攻击机执行：
@@ -53,15 +51,18 @@ EXE::CUSTOM => /var/www/html/bin_tcp_x86_53.exe
 
 靶机端口变化如下：
 
-虽报错，但并不影响执行。
+虽报错，但并不影响执行。  
+
 ![](media/f052e2fa45e58d72f484f56afb1772d9.jpg)
 
 **注意：**
 
 Psexec创建一个服务后，来运行可执行文件（如Micropoor.exe）。但是将可执行文件作为服务，payload必须接受来自控制管理器的命令，否则将会执行失败。而psexec创建服务后，将随之停止，该payload处于挂起模式。
 
-参考该服务源码：
-https://github.com/rapid7/metasploit-framework/blob/master/data/templates/src/pe/exe/service/service.c
+参考该服务源码：  
+
+https://github.com/rapid7/metasploit-framework/blob/master/data/templates/src/pe/exe/service/service.c  
+
 payload启动后，将会在过一段时间内退出。并强制终止。
 
 故该参数一般用于adduser。配合adduser_payload。或者配合一次性执行完毕非常连接的payload。如下载。抓明文密码等。不适合需长连接通信的payload。
@@ -108,7 +109,8 @@ msf exploit(windows/smb/psexec) > exploit
 ```
 ![](media/f0440595204a8fb13d4f8dbcf22925ec.jpg)
 
-目标机：
+目标机：  
+
 ![](media/e5b1a086c8f9b612acde771c1cb82884.jpg)
 
 在执行payload即可。
