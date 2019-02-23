@@ -31,7 +31,7 @@ w=createobject(^"micro^"+^"soft.xmlhttp^"):w.open^"get^",wsh.arguments(0),0:w.se
 wsh.arguments(1),2 >>downfile.vbs
 ```  
 
-**优点：**支持windows全版本系列
+**优点：**支持windows全版本系列  
 **缺点：**对https不友好
 
 >   Micropoor
