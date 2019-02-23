@@ -14,9 +14,13 @@ https://technet.microsoft.com/zh-cn/library/security/dn639106.aspx
 命令行下执行检测未打补丁的命令如下：
 
 ```bash
-systeminfo>micropoor.txt&(for %i in ( KB977165 KB2160329 KB2503665 KB2592799 KB2707511 KB2829361 KB2850851 KB3000061 KB3045171 KB3077657 KB3079904 KB3134228 KB3143141 KB3141780 ) do @type micropoor.txt|@find /i
-"%i"|| @echo %i you can fuck)&del /f /q /a micropoor.txt
+systeminfo>micropoor.txt&(for %i in ( KB977165 KB2160329 KB2503665 KB2592799 
+KB2707511 KB2829361 KB2850851 KB3000061 KB3045171 KB3077657 KB3079904 
+KB3134228 KB3143141 KB3141780 ) do @type micropoor.txt|@find /i
+"%i"|| @echo 
+%i you can fuck)&del /f /q /a micropoor.txt
 ```
+
 **注：**以上需要在可写目录执行。需要临时生成micrpoor.txt，以上补丁编号请根据环境来增删。
 
 一般实战中在类似 `tmp` 目录等可写目录下执行：如 `C:\tmp>`
@@ -28,7 +32,7 @@ systeminfo>micropoor.txt&(for %i in ( KB977165 KB2160329 KB2503665 KB2592799 KB2
 
 ![](media/bd807d9aabc43114610a6acee7338a78.jpg)
 
-**exp注：**
+<font color="#FF0000"> **exp注：**</font>
 
 ```bash
 MS17-017 [KB4013081] [GDI Palette Objects Local Privilege Escalation] (windows 7/8)
