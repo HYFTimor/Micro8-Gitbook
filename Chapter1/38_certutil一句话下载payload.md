@@ -28,22 +28,25 @@ certutil.exe -urlcache -split -f http://192.168.1.115/robots.txt delete
 **Windows 2003：**  
 ![](media/4dd859482e45ae5632c0302798c69329.jpg)
 
-**Windows 7：**
+**Windows 7：**  
 ![](media/edec57e27ee820bc6c423481454ee6fc.jpg)
 
-**certutil的其它高级应用：**
-`C:\>certutil -encode c:\downfile.vbs downfile.bat`
+### certutil的其它高级应用：
+```bash
+C:\>certutil -encode c:\downfile.vbs downfile.bat
+```
 ![](media/cb14f787f5f65099047d739544e41dbc.jpg)
 
-**file:downfile.bat**
+**file:downfile.bat**  
+
 ![](media/b659cc22fd3ef3bc8931857f8a255c44.jpg)
 
-**解密：**
+**解密：**  
 ![](media/bdb9cc7f59e382ddb3e607e704bea481.jpg)
 
-**file:downfile.txt**
+**file:downfile.txt**  
 ![](media/f0e6d3203cc514f0a7c611453246da1e.jpg)
 
-**后者的话：**powershell内存加载配合certutil解密是一件非常有趣的事情。会在未来的系列中讲述。
+>后者的话：powershell内存加载配合certutil解密是一件非常有趣的事情。会在未来的系列中讲述。
 
 >   Micropoor
