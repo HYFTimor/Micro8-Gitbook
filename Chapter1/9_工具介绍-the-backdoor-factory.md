@@ -68,7 +68,8 @@ msf exploit(handler) > exploit -j
 meterpreter > getuid
 Server username: John-PC\John 
 ```
-//确定目标
+//确定目标  
+
 ![](media/613afd4b9343cfd43965aa934b71cc48.jpg)
 
 >   Micropoor
