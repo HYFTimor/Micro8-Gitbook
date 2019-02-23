@@ -1,11 +1,4 @@
-
-
-
-
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
-**Railgun是Meterpreter stdapi的扩展，允许任意加载DLL。Railgun的最大好处是能够动态访问系统上的整个Windows API。通过从用户进程调用Windows API。**
+**Railgun是Meterpreter stdapi的扩展，允许任意加载DLL。Railgun的最大好处是能够动态访问系统上的整个Windows API。通过从用户进程调用Windows API。**  
 ![](media/3887a1136b060d02cc820deceb0610c5.jpg)
 
 meterpreter下执行irb进入ruby交互。
@@ -113,7 +106,8 @@ rface="65539", @metric=10>, #<Rex::Post::Meterpreter::Extensions::Stdapi::Net::R
 >> client.fs.file.search("C:\\", "*.txt")
 ```
 
-更多的敏感文件操作，后续补充。
+更多的敏感文件操作，后续补充。  
+
 ![](media/f9b76bce304c8f9f4f75d6db4deaccd4.jpg)
 
 更多相关的api操作在未来的课时中介绍。
