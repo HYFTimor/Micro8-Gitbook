@@ -1,21 +1,20 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
+
 
 **Tunna简介：**
 
 Tunna1.1 是 secforce 在2014年11月出品的一款基于HTTP隧道工具。其中v1.1中支持了SOCKS4a。
 
-Tunna演示稿：
+Tunna演示稿：  
 https://drive.google.com/open?id=1PpB8_ks93isCaQMEUFf_cNvbDsBcsWzE
 
-Github：
+Github：  
 https://github.com/SECFORCE/Tunna
 
-**攻击机：** 
-192.168.1.5 Debian
+**攻击机：**   
+192.168.1.5 Debian  
 192.168.1.4 Windows 7
 
-**靶机：** 
+**靶机：**   
 192.168.1.119 Windows 2003
 
 **安装：**
@@ -33,10 +32,12 @@ Resolving deltas: 100% (84/84), done.
 
 **靶机执行：**
 
-以aspx为demo。
+以aspx为demo。  
+
 ![](media/45105406fce5e573635d20030393a928.jpg)
 
-**攻击机执行：**
+**攻击机执行：**  
+
 ```python
 python proxy.py ‐u http://192.168.1.119/conn.aspx ‐l 1234 ‐r 3389 ‐s ‐ v
 ```
@@ -45,7 +46,7 @@ python proxy.py ‐u http://192.168.1.119/conn.aspx ‐l 1234 ‐r 3389 ‐s ‐
 ![](media/5e8e8a0ea358fdf98fc37bbb31b5994e.jpg)
 
 
-## 附录：
+### 附录：
 
 **解决：**General Exception: [Errno 104] Connection reset by peer
 ```bash
