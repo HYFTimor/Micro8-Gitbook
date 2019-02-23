@@ -1,13 +1,10 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，可预防**肾结石，痛风**等。
 
 CrackMapExec弥补了MSF4下auxiliary，scanner模块下的Command执行方式，但MSF5已解决该问题。在MSF4下，该框架针对后渗透的横向移动经常出现，虽然MSF5已解决该问题，但该框架在配合bloodhound与empire依然目前有一定优势。
 
 安装方式：from Wiki：
 
-**Kali：**
+### Kali：
 ```bash
 apt‐get install crackmapexec
 ```
@@ -22,7 +19,7 @@ pipenv shell
 python setup.py install
 ```
 
-**Mac OSX：**
+### Mac OSX：
 ```bash
 pip install ‐‐user crackmapexec
 ```
@@ -106,11 +103,11 @@ SMB 192.168.1.119 445 WIN03X64 Users membercount: 3
 ```
 ![](media/4136be4626226c3dc06862d42b2ede35.jpg)
 
-分别支持4种执行Command，如无--exec-method执行，默认为wmiexec执行。
-* mmcexec 
-* smbexec 
-* wmiexec 
-* atexec
+分别支持4种执行Command，如无--exec-method执行，默认为wmiexec执行。  
+* mmcexec   
+* smbexec   
+* wmiexec   
+* atexec  
 
 基于smbexec执行Command
 ```bash
@@ -155,7 +152,7 @@ SMB 192.168.1.6 445 WIN‐5BMI9HGC42S win‐5bmi9hgc42s\administrator
 
 基于AT执行Command
 
-目标机：无运行calc进程
+目标机：无运行calc进程  
 ![](media/9dbb8af94a4ef3de96eb1476162a3a9d.jpg)
 
 ```bash
@@ -194,8 +191,8 @@ SMB 192.168.1.6 445 WIN‐5BMI9HGC42S D:
 SMB 192.168.1.6 445 WIN‐5BMI9HGC42S E:
 ```
 
-## 附录：
-**解决出现：STATUS_PIPE_DISCONNECTED**
+### 附录：
+**解决出现：STATUS_PIPE_DISCONNECTED**  
 ![](media/a7a5a32340bdb7651266594f5dd0dbc7.jpg)
 
 改成经典
@@ -204,7 +201,8 @@ SMB 192.168.1.6 445 WIN‐5BMI9HGC42S E:
 
 解决出现错误：UnicodeDecodeError:
 
-升级impacket
+升级impacket  
+
 ![](media/f2f8fc124237c8317e634b28c6ff4212.jpg)
 
 >   Micropoor
