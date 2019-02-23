@@ -39,7 +39,7 @@ x86 windows 2003 ip:192.168.1.115
 以上类似，提权。  
 ![](media/cc563fb9d228e4c7adaf7b284925dbf4.jpg)
 
-### 4.exploit/windows/mysql/scrutinizer_upload_exec
+### 4、exploit/windows/mysql/scrutinizer_upload_exec
 
 上传文件执行。
 
