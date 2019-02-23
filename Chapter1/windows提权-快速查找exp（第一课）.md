@@ -1,4 +1,4 @@
-**微软官方时刻关注列表网址：**
+### 微软官方时刻关注列表网址：
 
 https://technet.microsoft.com/zh-cn/library/security/dn639106.aspx
 
@@ -22,6 +22,7 @@ KB3134228 KB3143141 KB3141780 ) do @type micropoor.txt|@find /i
 
 **注：**以上需要在可写目录执行。需要临时生成micrpoor.txt，以上补丁编号请根据环境来增删。
 
+### 示例
 一般实战中在类似 `tmp` 目录等可写目录下执行：如 `C:\tmp>`
 
 以11-080为例：  
@@ -31,7 +32,7 @@ KB3134228 KB3143141 KB3141780 ) do @type micropoor.txt|@find /i
 
 ![](media/bd807d9aabc43114610a6acee7338a78.jpg)
 
-<font color="#FF0000">exp注：</font>
+### exp注：
 
 ```bash
 MS17-017 [KB4013081] [GDI Palette Objects Local Privilege Escalation] (windows 7/8)
@@ -86,7 +87,7 @@ MS05-039 [KB899588] [PnP Service] (Win 9X/ME/NT/2000/XP/2003)
 MS03-026 [KB823980] [Buffer Overrun In RPC Interface] (/NT/2000/XP/2003)
 ```
 
-**已对外公开exp注：**
+### 已对外公开exp注：
 
 https://github.com/SecWiki/windows-kernel-exploits  
 https://github.com/WindowsExploits/Exploits  
