@@ -1,8 +1,4 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，可预防**肾结石，通风**等。
-
 痛风可伴发肥胖症、高血压病、糖尿病、脂代谢紊乱等多种代谢性疾病。
 
 **攻击机：**
@@ -29,7 +25,7 @@ https://micropoor.blogspot.com/
 * auxiliary/scanner/dns/dns_amp
 * auxiliary/scanner/mysql/mysql_version
 
-**六：基于auxiliary/scanner/ssh/ssh_version发现SSH服务**
+### 六：基于auxiliary/scanner/ssh/ssh_version发现SSH服务
 ```bash
 msf auxiliary(scanner/ssh/ssh_version) > show options 
 
@@ -62,7 +58,7 @@ sd:openssh:7.9p1 os.vendor=Debian os.family=Linux os.product=Linux os.cpe
 ```
 ![](media/807c52e59e46d0f2e9e95d01437eeb14.jpg)
 
-**七：基于auxiliary/scanner/telnet/telnet_version发现TELNET服务**
+### 七：基于auxiliary/scanner/telnet/telnet_version发现TELNET服务
 
 ```bash
 msf auxiliary(scanner/telnet/telnet_version) > show options 
@@ -86,7 +82,7 @@ msf auxiliary(scanner/telnet/telnet_version) > exploit
 ```
 ![](media/c089625576a0bc03d7c27c5e8a29bf76.jpg)
 
-**八：基于scanner/discovery/udp_probe发现内网存活主机**
+### 八：基于scanner/discovery/udp_probe发现内网存活主机
 ```bash
 msf auxiliary(scanner/discovery/udp_probe) > show options 
 
@@ -121,7 +117,7 @@ msf auxiliary(scanner/discovery/udp_probe) > exploit
 ```
 ![](media/af10a3aff554c008158ff0e85b036489.jpg)
 
-**九：基于auxiliary/scanner/dns/dns_amp发现内网存活主机**
+### 九：基于auxiliary/scanner/dns/dns_amp发现内网存活主机
 ```bash
 msf auxiliary(scanner/dns/dns_amp) > show options 
 
@@ -151,7 +147,7 @@ msf auxiliary(scanner/dns/dns_amp) > exploit
 ```
 ![](media/3fc4759c9996757b077c7a33694e0dea.jpg)
 
-**十：基于auxiliary/scanner/mysql/mysql_version发现mysql服务**
+### 十：基于auxiliary/scanner/mysql/mysql_version发现mysql服务
 ```bash
 msf auxiliary(scanner/mysql/mysql_version) > show options 
 
