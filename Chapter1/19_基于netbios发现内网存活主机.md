@@ -1,52 +1,64 @@
-专注APT攻击与防御
-https://micropoor.blogspot.com/
+### netbios简介：
+IBM公司开发，主要用于数十台计算机的小型局域网。该协议是一种在局域网上的程序可以使用的应用程序编程接口（API），为程序提供了请求低级服务的同一的命令集，作用是为了给局域网提供网络以及其他特殊功能。  
 
-**netbios简介：**
-IBM公司开发，主要用于数十台计算机的小型局域网。该协议是一种在局域网上的程序可以使用的应用程序编程接口（API），为程序提供了请求低级服务的同一的命令集，作用是为了给局域网提供网络以及其他特殊功能。
 系统可以利用WINS服务、广播及Lmhost文件等多种模式将NetBIOS名-——特指基于NETBIOS协议获得计算机名称——解析为相应IP地址，实现信息通讯，所以在局域网内部使用NetBIOS协议可以方便地实现消息通信及资源的共享。
 
-**nmap扫描：**
+### nmap扫描：
 
-`root@John:~# nmap -sU --script nbstat.nse -p137 192.168.1.0/24 -T4`
+```bash
+root@John:~# nmap -sU --script nbstat.nse -p137 192.168.1.0/24 -T4
+```  
 ![](media/609f6182915a5be20f36fcd208a88055.jpg)
 
-**msf扫描：**
+### msf扫描：
 
-`msf > use auxiliary/scanner/netbios/nbname`
+```bash
+msf > use auxiliary/scanner/netbios/nbname
+```  
 ![](media/01dfd2e205f58aac0391c60353786434.jpg)
 
-**nbtscan扫描：**
+### nbtscan扫描：
 
-项目地址：http://www.unixwiz.net/tools/nbtscan.html 
+项目地址：  
+http://www.unixwiz.net/tools/nbtscan.html  
 **Windows:**
-`D:\>nbtscan-1.0.35.exe -m 192.168.1.0/24`
+```bash
+D:\>nbtscan-1.0.35.exe -m 192.168.1.0/24
+```  
 ![](media/96729621cc66eba7acfeec9df6b0e04f.jpg)
 
-`D:\>nbtstat -n （推荐）`
-![](media/e64a202423dea3a28dc8261bfc1c7221.jpg)
+```bash
+D:\>nbtstat -n （推荐）
+```  
+![](media/e64a202423dea3a28dc8261bfc1c7221.jpg)  
+
 ![](media/fa098960ea9e6ec5369e4b0e953d5b39.jpg)
 
-**Linux：（推荐）**
-```
+### Linux：（推荐）
+```bash
 root@John:~/Desktop/nbtscan# tar -zxvf ./nbtscan-source-1.0.35.tgz（1.5.1版本在附录）
 root@John:~/Desktop/nbtscan# make 
 root@John:~/Desktop/nbtscan# nbtscan -r 192.168.1.0/24
-```
+```  
 ![](media/c6eb887a62dbc2e53d9ce886b2561494.jpg)
 
-`root@John:~/Desktop/nbtscan# nbtscan -v -s: 192.168.1.0/24`
+```bash
+root@John:~/Desktop/nbtscan# nbtscan -v -s: 192.168.1.0/24
+```  
 ![](media/6f8c76d5ce97b73134b0d0d5c190ed85.jpg)
 
-**NetBScanner：**
-项目地址：https://www.nirsoft.net/utils/netbios_scanner.html
+### NetBScanner：
+项目地址：  
+https://www.nirsoft.net/utils/netbios_scanner.html  
 ![](media/4d1a86423d89ed67c9fb7b95c6076846.jpg)
 
 
-附录：
-nbtscan：
-链接：https://pan.baidu.com/s/1hs8ckmg 
-密码：av40
-```
+### 附录：
+nbtscan：  
+链接：https://pan.baidu.com/s/1hs8ckmg  
+密码：av40  
+
+```bash
 NBTscan version 1.5.1. Copyright (C) 1999-2003 Alla Bezroutchko. This is a free software and it comes with absolutely no warranty. You can use,distribute and modify it under terms of GNU GPL.
 
 Usage:
@@ -86,7 +98,8 @@ Examples:
     nbtscan -f iplist
         Scans IP addresses specified in file iplist.
 ```
-NBTscan version 1.5.1:
-项目地址：https://github.com/scallywag/nbtscan
+NBTscan version 1.5.1:  
+项目地址：  
+https://github.com/scallywag/nbtscan
 
 >   Micropoor
