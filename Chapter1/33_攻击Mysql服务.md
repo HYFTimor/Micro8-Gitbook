@@ -1,7 +1,4 @@
-专注APT攻击与防御
-https://micropoor.blogspot.com/
-
-msf 内置关于mysql插件如下（部分非测试mysql 插件）
+msf 内置关于mysql插件如下（部分非测试mysql 插件）  
 ![](media/876ad30bffd3f57b961ecb2781f888fc.jpg)
 
 关于msf常用攻击mysql插件如下：

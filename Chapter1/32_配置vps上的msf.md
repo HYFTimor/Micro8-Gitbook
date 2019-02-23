@@ -57,13 +57,14 @@ root@john:~# apt-get install metasploit-framework
 以此种方式安装，也无需在配置psql。可快速部署解决项目。  
 ![](media/bf8614f720c322b130eb82cb9b908bd0.jpg)
 
-**sqlmap** 
+**sqlmap**  
+ 
 ![](media/cf91eb7b6ef1e0bb9bfd5415351c8b05.jpg)
 
-在虚拟机，多数存在几点问题
-1. 配置后，ssh无法连接
-2. 关于vmtools的问题
-3. 虚拟机的vpn问题
+在虚拟机，多数存在几点问题  
+1. 配置后，ssh无法连接  
+2. 关于vmtools的问题  
+3. 虚拟机的vpn问题  
 4. U盘安装kali不能挂载的问题
 
 ### 问题1：
