@@ -1,23 +1,22 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 DIRB官方地址：
 http://dirb.sourceforge.net/
 
-**简介（摘自官方原文）：**
+### 简介（摘自官方原文）：
 
-DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary based attack against a web server and analizing the response.
+> DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary based attack against a web server and analizing the response.
 
-**介绍：**
+### 介绍：
 
 DIRB是一个基于命令行的工具，依据字典来爆破目标Web路径以及敏感文件，它支持自定义UA，cookie，忽略指定响应吗，支持代理扫描，自定义毫秒延迟，证书加载扫描等。是一款非常优秀的全方位的目录扫描工具。同样Kaili内置了dirb。
 
-**攻击机：** 192.168.1.104 Debian
-**靶机：** 192.168.1.102 Windows 2003 IIS
+**攻击机：**  
+192.168.1.104 Debian  
+**靶机：**  
+192.168.1.102 Windows 2003 IIS
 
 ![](media/c3fcc5b823e0595a4cfc3182450ede90.jpg)
 
-**普通爆破：**
+### 普通爆破：
 ```bash
 root@John:~/wordlist/small# dirb http://192.168.1.102 ./ASPX.txt 
 
@@ -44,7 +43,7 @@ DOWNLOADED: 822 ‐ FOUND: 2
 ```
 ![](media/db482720c37469309590eccaa2eebb95.jpg)
 
-**多字典挂载：**
+### 多字典挂载：
 ```bash
 root@John:~/wordlist/small# dirb http://192.168.1.102 ./ASPX.txt,./DIR.txt
 
@@ -82,7 +81,7 @@ DOWNLOADED: 1495 ‐ FOUND: 10
 ```
 ![](media/544ad274590fbcca704dd16b8186fb39.jpg)
 
-**自定义UA：**
+### 自定义UA：
 ```bash
 root@John:~/wordlist/small# dirb http://192.168.1.102 ./ASPX.txt ‐a "M
 ozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
@@ -111,7 +110,7 @@ DOWNLOADED: 822 ‐ FOUND: 2
 ```
 ![](media/3d67b8846183b7172757f29b6420349f.jpg)
 
-**自定义cookie：**
+###  自定义cookie：
 ```bash
 root@John:~/wordlist/small# dirb http://192.168.1.102/Manage ./DIR.txt
 ‐a "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.ht
@@ -149,7 +148,7 @@ END_TIME: Sun Feb 17 23:53:10 2019
 DOWNLOADED: 673 ‐ FOUND: 6
 ```
 
-**自定义毫秒延迟：**
+### 自定义毫秒延迟：
 ```bash
 root@John:~/wordlist/small# dirb http://192.168.1.102/Manage ./DIR.txt
 ‐a "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.ht
@@ -189,7 +188,7 @@ DOWNLOADED: 673 ‐ FOUND: 6
 ```
 ![](media/5c184a09832f6e4b1d2df8b80c2b7c1f.jpg)
 
-**其他更多有趣的功能：**
+### 其他更多有趣的功能：
 ```bash
 DIRB v2.22
 By The Dark Raver
