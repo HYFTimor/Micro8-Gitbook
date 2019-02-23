@@ -1,6 +1,3 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，可预防**肾结石，通风**等。
 痛风可伴发肥胖症、高血压病、糖尿病、脂代谢紊乱等多种代谢性疾病。
 
@@ -11,7 +8,7 @@ https://micropoor.blogspot.com/
 192.168.1.2 Windows 7
 192.168.1.119 Windows 2003
 
-**MSF的search支持type搜索：**
+### MSF的search支持type搜索：
 ```bash
 msf > search scanner type:auxiliary 
 
@@ -38,7 +35,7 @@ auxiliary/scanner/x11/open_x11 normal Yes X11 No‐Auth Scanner
 
 ![](media/a25502ba38f084a0edddd759473d4921.jpg)
 
-**第一季主要介绍scanner下的五个模块，辅助发现内网存活主机，分别为：**
+**第一季主要介绍 scanner 下的五个模块，辅助发现内网存活主机，分别为：**
 
 * auxiliary/scanner/discovery/arp_sweep 
 * auxiliary/scanner/discovery/udp_sweep
@@ -46,7 +43,7 @@ auxiliary/scanner/x11/open_x11 normal Yes X11 No‐Auth Scanner
 * auxiliary/scanner/http/http_version
 * auxiliary/scanner/smb/smb_version
 
-**一：基于scanner/http/http_version发现HTTP服务**
+### 一：基于scanner/http/http_version发现HTTP服务
 ```bash
 msf auxiliary(scanner/http/http_version) > show options 
 
@@ -79,7 +76,7 @@ msf auxiliary(scanner/http/http_version) > exploit
 ```
 ![](media/15b17e700bde4540e5b51959a3e15de5.jpg)
 
-**二：基于scanner/smb/smb_version发现SMB服务**
+### 二：基于scanner/smb/smb_version发现SMB服务
 ```bash
 msf auxiliary(scanner/smb/smb_version) > show options 
 
@@ -111,7 +108,7 @@ msf auxiliary(scanner/smb/smb_version) > exploit
 ```
 ![](media/db717c6c50914ce513a94fe211bf620b.jpg)
 
-**三：基于scanner/ftp/ftp_version发现FTP服务**
+### 三：基于scanner/ftp/ftp_version发现FTP服务
 ```bash
 msf auxiliary(scanner/ftp/ftp_version) > show options 
 
@@ -142,7 +139,7 @@ msf auxiliary(scanner/ftp/ftp_version) > exploit
 ```
 ![](media/f6190ef2a7165ce148af70d8fde88ddc.jpg)
 
-**四：基于scanner/discovery/arp_sweep发现内网存活主机**
+### 四：基于scanner/discovery/arp_sweep发现内网存活主机
 ```bash
 msf auxiliary(scanner/discovery/arp_sweep) > show options 
 
@@ -167,7 +164,7 @@ msf auxiliary(scanner/discovery/arp_sweep) > exploit
 ```
 ![](media/ffadf4bf3cace0a835ea5e7ce94ea68e.jpg)
 
-**五：基于scanner/discovery/udp_sweep发现内网存活主机**
+### 五：基于scanner/discovery/udp_sweep发现内网存活主机
 ```bash
 msf auxiliary(scanner/discovery/udp_sweep) > show options 
 
