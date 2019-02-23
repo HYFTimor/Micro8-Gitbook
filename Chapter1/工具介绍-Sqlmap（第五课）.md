@@ -1,9 +1,7 @@
-专注APT攻击与防御
-https://micropoor.blogspot.com/
-
+### sqlmap参数详解：
 由于Sqlmap 是常用工具之一，所以本篇的篇幅较长，详解一次所有参数。
-**sqlmap参数详解：**
-```
+
+```bash
 Usage: python sqlmap.py [options]
 
 Options（选项）:
