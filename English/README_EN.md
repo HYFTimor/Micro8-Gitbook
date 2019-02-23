@@ -1,5 +1,5 @@
 # Micro8
-  Other Languages: [简体中文](README.md)
+  Other Languages: [简体中文](../README.md)
   
   Infiltration attack for more than ten years, due to age, physical reasons, I feel that I am about to exit the first-line penetration attack. I plan to write out the textbooks I have learned in my life. Because the article involves sensitive attack behavior, so many need to mosaic, or local manifestation in the form of demo. When the industry has been around for a long time, you will one day discover that the essence of the original things is so important. For example, the essence of intranet penetration is information gathering. At that time, a big man passed this experience to me. Similarly, I am an old guy today, and I hope to pass on this experience.
 
