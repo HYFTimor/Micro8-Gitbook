@@ -64,10 +64,14 @@ copy 获取缓冲区内容：
 
 copy 用法如下：
 
-> copy（a,b,c);
-> a：就是copy源，就是一个字符串，表示你将要从a里copy一些东西，
-> b：从a中的第b位开始copy（包含第11位），
-> c：copy从第b位开始后的c个字符，
+> copy（a,b,c);  
+> 
+> a：就是copy源，就是一个字符串，表示你将要从a里copy一些东西;  
+> 
+> b：从a中的第b位开始copy（包含第11位）;  
+> 
+> c：copy从第b位开始后的c个字符，  
+> 
 > exp： m:=‘the test fuck'
 >      s：=copy（m,2,2）； //s值为‘he’
 
