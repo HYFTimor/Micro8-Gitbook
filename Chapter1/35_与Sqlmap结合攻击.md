@@ -1,13 +1,10 @@
-专注APT攻击与防御
-https://micropoor.blogspot.com/
-
-msf在非session模式下与session模式下都支持第三方的加载与第三方框架的融合。代表参数为load。两种模式下的load意义不同。本季主要针对非session模式下的load sqlmap情景。
+msf 在非 session 模式下与 session 模式下都支持第三方的加载与第三方框架的融合。代表参数为 load。两种模式下的 load 意义不同。本季主要针对非 session 模式下的 load sqlmap情景。  
 ![](media/0b8b7eb912d7d46bf6e6f1dfd636bfeb.jpg)
 
 ![](media/65e1410fa83b3a40611d3d8bfcc3ddee.jpg)
 
 
-**加载Sqlmap后，主要参数如下：**
+### 加载Sqlmap后，主要参数如下：
 ```bash
 Sqlmap Commands
 =============== 
@@ -27,22 +24,25 @@ sqlmap_set_option Set an option for a task
 sqlmap_start_task Start the task
 msf exploit(multi/handler) > help sqlmap
 ```
-help 加载的模块名，为显示第三方的帮助文档。
-![](media/e7e0f046ae5d01be11380d39684930f5.jpg)
-msf上的sqlmap插件依赖于sqlmap的sqlmapapi.py 在使用前需要启动sqlmapapi.py
+help 加载的模块名，为显示第三方的帮助文档。  
+![](media/e7e0f046ae5d01be11380d39684930f5.jpg)  
+
+msf 上的 sqlmap 插件依赖于 sqlmap 的 sqlmapapi.py 在使用前需要启动sqlmapapi.py  
+
 ![](media/f878d0036fa5a7b15a07fd062e61f30c.jpg)
-
-
 
 然后在msf上建立任务。
 
-而sqlmap对msf也完美支持。
+而 sqlmap 对 msf 也完美支持。
 
-靶机：192.168.1.115，Sql server 2005 + aspx.net
+**靶机：**  
+192.168.1.115，Sql server 2005 + aspx.net
 
-构造注入点，如图1：
-![图1：](media/bf195a288663fc6a43042f6dd53a160d.jpg)
-数据结构，如图2：
+构造注入点，如图1：  
+
+![图1：](media/bf195a288663fc6a43042f6dd53a160d.jpg)  
+
+数据结构，如图2：  
 ![](media/b0c52a380dc2c1ea276e444e5ef8997b.jpg)
 
 ![](media/e26356b1e7bcaceeb258ce8f83abf40e.jpg)
@@ -55,7 +55,7 @@ msf上的sqlmap插件依赖于sqlmap的sqlmapapi.py 在使用前需要启动sqlm
 
 关于msf与sqlmap的结合在未来的系列中还会继续讲述，本季作为基础。
 
-附录：
+### 附录：
 注入点代码：
 ``` html
 <%@ Page Language="C#" AutoEventWireup="true" %>
@@ -109,3 +109,5 @@ Color="#CCCCFF"></HeaderStyle>
 </body>
 </html>
 ```
+
+> Micropoor
