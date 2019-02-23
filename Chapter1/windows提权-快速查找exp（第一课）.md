@@ -13,7 +13,7 @@ https://technet.microsoft.com/zh-cn/library/security/dn639106.aspx
 快速查找未打补丁的exp，可以最安全的减少目标机的未知错误，以免影响业务。
 命令行下执行检测未打补丁的命令如下：
 
-```shell
+```bash
 systeminfo>micropoor.txt&(for %i in ( KB977165 KB2160329 KB2503665 KB2592799 KB2707511 KB2829361 KB2850851 KB3000061 KB3045171 KB3077657 KB3079904 KB3134228 KB3143141 KB3141780 ) do @type micropoor.txt|@find /i
 "%i"|| @echo %i you can fuck)&del /f /q /a micropoor.txt
 ```
@@ -21,7 +21,7 @@ systeminfo>micropoor.txt&(for %i in ( KB977165 KB2160329 KB2503665 KB2592799 KB2
 
 一般实战中在类似 `tmp` 目录等可写目录下执行：如 `C:\tmp>`
 
-以11-080为例：
+以11-080为例：  
 ![](media/3b63ae0a14a9720140246f049ed8ab41.jpg)
 
 ![](media/b0f61077ab0e9fd3adeed9eafc0860c6.jpg)
