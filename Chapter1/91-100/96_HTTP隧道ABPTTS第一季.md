@@ -1,14 +1,13 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
 
-**ABPTTS简介：**
+
+### ABPTTS简介：
 
 ABPTTS是NCC Group在2016年blackhat推出的一款将TCP流量通过HTTP/HTTPS进行流量转发，在目前云主机的大环境中，发挥了比较重要的作用，可以通过脚本进行RDP,SSH,Meterpreter的交互与连接。也意味着这样可以建立一个通过80端口得流量出站来逃避防火墙。与其它http隧道不同的是，abptts是全加密。
 
-2016年blackhat介绍：
+2016年blackhat介绍：  
 https://www.blackhat.com/us-16/arsenal.html#a-black-path-toward-the-sun
 
-Github：
+Github：  
 https://github.com/nccgroup/ABPTTS
 
 安装与生成payload：
@@ -43,12 +42,13 @@ root@John:~/ABPTTS# python abpttsfactory.py ‐o webshell
 ![](media/2784a52d852031eff237e0a3302d062d.jpg)
 
 
-**靶机执行：**
+### 靶机执行：
 
-以aspx为demo。
+以aspx为demo。  
+
 ![](media/d962cbc9afc4b8e245f7cd576f871fcb.jpg)
 
-**攻击机执行：**
+### 攻击机执行：
 
 **注：如果攻击机为vps，则 -f 需要填写vps_ip:port/目标机:port**
 
