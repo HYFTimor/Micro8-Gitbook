@@ -1,9 +1,6 @@
-专注APT攻击与防御
-https://micropoor.blogspot.com/
-
 本季是为配合msf在渗透过程中无文件渗透，提前做基础过度。也为msf插件编写做基础过度。
 
-ruby shellcode 生成如下：
+### ruby shellcode 生成如下：
 ```ruby
 msfvenom ‐p windows/messagebox TEXT=Micropoor TITLE=Micropoor ‐f ruby ‐‐smallest
 ```
@@ -11,7 +8,7 @@ msfvenom ‐p windows/messagebox TEXT=Micropoor TITLE=Micropoor ‐f ruby ‐‐
 
 ![](media/708fd97e6cb1c45afd361b8b53e6ffc5.jpg)
 
-**附源码：**
+### 附源码：
 ```ruby
 require 'fiddle'
 require 'fiddle/import'
