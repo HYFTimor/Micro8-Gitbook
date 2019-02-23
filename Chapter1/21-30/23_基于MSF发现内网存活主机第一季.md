@@ -5,7 +5,7 @@
 192.168.1.5 Debian
 
 **靶机：** 
-192.168.1.2 Windows 7
+192.168.1.2 Windows 7  
 192.168.1.119 Windows 2003
 
 ### MSF的search支持type搜索：
