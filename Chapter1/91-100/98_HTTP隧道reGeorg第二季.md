@@ -1,21 +1,20 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
 
-**reGeorg简介：**
+
+### reGeorg简介：
 
 reGeorg 的前身是2008年 SensePost 在 BlackHat USA 2008 的 reDuh 延伸与扩展。也是目前安全从业人员使用最多，范围最广，支持多丰富的一款 http 隧道。从本质上讲，可以将 JSP/PHP/ASP/ASPX 等页面上传到目标服务器，便可以访问该服务器后面的主机。
 
-2014年blackhat介绍
+2014年blackhat介绍  
 https://www.blackhat.com/eu-14/arsenal.html#regeorg
 
-Github：
+Github：  
 https://github.com/sensepost/reGeorg
 
-**攻击机：**
-192.168.1.5 Debian
+**攻击机：**  
+192.168.1.5 Debian  
 192.168.1.4 Windows 7
 
-**靶机：** 
+**靶机：**   
 192.168.1.119 Windows 2003
 
 安装：
@@ -67,7 +66,8 @@ Requirement already satisfied: urllib3 in /usr/lib/python2.7/dist‐packages (1.
 
 **靶机执行：**
 
-以aspx为demo。
+以aspx为demo。  
+
 ![](media/6f441fb77ba89a092b149fc8b4bc7eb9.jpg)
 
 **攻击机执行：**
@@ -77,7 +77,8 @@ python reGeorgSocksProxy.py ‐p 8080 ‐l 192.168.1.5 ‐u http://192.168.1.119
 ![](media/ecf64d63d586febad9c38bfa700ecd46.jpg)
 
 
-Windows下配合Proxifier：
+Windows下配合Proxifier：  
+
 ![](media/e0ed655e244f7a76f703bfa13ec6bb4d.jpg)
 
 ![](media/48feea22eae0e72d9585eef488eb07f8.jpg)
