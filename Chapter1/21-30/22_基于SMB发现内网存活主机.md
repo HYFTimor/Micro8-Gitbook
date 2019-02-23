@@ -1,9 +1,6 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
-**基于msf**
+### 基于msf
 模块：
-scanner/smb/smb_version
+`scanner/smb/smb_version`
 
 ```bash
 msf auxiliary(scanner/smb/smb_version) > show options
@@ -36,10 +33,10 @@ msf auxiliary(scanner/smb/smb_version) > exploit
 [*] Scanned 232 of 256 hosts (90% complete)
 [*] Scanned 256 of 256 hosts (100% complete)
 [*] Auxiliary module execution completed 
-```
+```  
 ![](media/c4d807b384fa3fbd0de85b80b2a38e59.jpg)
 
-**基于cme（参考第九十三课）**
+### 基于cme（参考第九十三课）
 ```bash
 root@John:~# cme smb 192.168.1.0/24
 SMB 192.168.1.4 445 JOHN‐PC [*] Windows 7 Ultimate 7601 Service Pack 1
@@ -48,10 +45,10 @@ SMB 192.168.1.99 445 JOHN‐PC [*] Windows 7 Ultimate 7601 Service Pack
 x64 (name:JOHN‐PC) (domain:JOHN‐PC) (signing:False) (SMBv1:True)
 SMB 192.168.1.119 445 WIN03X64 [*] Windows Server 2003 R2 3790 Service
 Pack 2 x32 (name:WIN03X64) (domain:WIN03X64) (signing:False) (SMBv1:True
-```
+```  
 ![](media/5206dc9e56a970261d19557e81a2dd73.jpg)
 
-**基于nmap**
+### 基于nmap
 ```bash
 root@John:~# nmap ‐sU ‐sS ‐‐script smb‐enum‐shares.nse ‐p 445 192.168.1.119
 Starting Nmap 7.70 ( https://nmap.org ) at 2019‐01‐29 08:45 EST
@@ -93,16 +90,16 @@ Host script results:
 |_ Current user access: READ/WRITE 
 
 Nmap done: 1 IP address (1 host up) scanned in 1.24 seconds 
-```
+```  
 ![](media/3fd308a951925bf5a20f8f6568f1c84a.jpg)
 
-**基于CMD：**
+### 基于CMD：
 ```bash
 for /l %a in (1,1,254) do start /min /low telnet 192.168.1.%a 445
 ```
 ![](media/eab2b645fe2065a540c49a842dfd2ecf.jpg)
 
-**基于powershell：**
+### 基于powershell：
 一句话扫描：
 单IP：
 ```bash
@@ -125,5 +122,6 @@ Net.Sockets.TcpClient).Connect("192.168.1.$a",$_)) "Port $_ is open"}
 "192.168.1.$a"; 80,445 | % {echo ((new‐object Net.Sockets.TcpClient).Conn
 ect("192.168.1.$a",$_)) "Port $_ is open"} 2>$null}
 ```
-![](media/fd7db2c22f6d1deac9303d3bdbabcd4f.jpg)
+![](media/fd7db2c22f6d1deac9303d3bdbabcd4f.jpg)  
+
 >   Micropoor
