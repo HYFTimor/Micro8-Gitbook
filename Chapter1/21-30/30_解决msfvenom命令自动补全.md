@@ -42,8 +42,10 @@ plugins=(msfvenom)
 root@John:~# source ~/.zshrc
 ```
 
-**效果如下：**
-![](media/c693938819ad8820ee60c300a080e91a.jpg)
+**效果如下：**  
+
+![](media/c693938819ad8820ee60c300a080e91a.jpg)  
+
 ![](media/2625fc702fe3e4dbc6c6faab8fe3bd66.jpg)
 
 ### 附录A：
