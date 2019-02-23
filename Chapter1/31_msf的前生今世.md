@@ -1,14 +1,11 @@
-专注APT攻击与防御
-https://micropoor.blogspot.com/
-
->   The world’s most used penetration testing framework.
+>   The world’s most used penetration testing framework.  
+> 
 >   Metasploit
 
-从本季开始将会连载Metasploit教学，非常荣幸，本部门在我的“怂恿”下，基本以Metasploit为常用框架做渗透。为了更好的把这个“坏习惯”延续下去，遂打算写一套完整的系列教程。以供同学们在使用中，或者新来的同学形成递归学习或者查询相关资料。在写的同时，查阅了大量的资料以及借鉴了许多思路。感谢为此贡献的老师们。
+从本季开始将会连载 Metasploit 教学，非常荣幸，本部门在我的“怂恿”下，基本以Metasploit 为常用框架做渗透。为了更好的把这个“坏习惯”延续下去，遂打算写一套完整的系列教程。以供同学们在使用中，或者新来的同学形成递归学习或者查询相关资料。在写的同时，查阅了大量的资料以及借鉴了许多思路。感谢为此贡献的老师们。
 
-Metasploit项目是一个旨在提供安全漏洞信息计算机安全项目，可以协助安全工程师进行渗透测试（penetration testing）及入侵检测系统签名开发。
-Github开源地址：
-https://github.com/rapid7/metasploit-framework
+Metasploit 项目是一个旨在提供安全漏洞信息计算机安全项目，可以协助安全工程师进行渗透测试（penetration testing）及入侵检测系统签名开发。  
+Github开源地址：https://github.com/rapid7/metasploit-framework
 
 msf（未来Metasploit的简称）基本遵循PTES渗透测试标准。它将渗透分解如下：
 
@@ -20,7 +17,7 @@ msf（未来Metasploit的简称）基本遵循PTES渗透测试标准。它将渗
 6. 会话清除
 7. 生成报告（需pro版本）
 
-**而PTEST渗透测试标准如下：**
+### 而PTEST渗透测试标准如下：
 
 1：前期交互阶段
 在前期交互（Pre-Engagement Interaction）阶段，渗透测试团队与客户组织进行交互讨论，最重要的是确定渗透测试的范围、目标、限制条件以及服务合同细节。
@@ -56,12 +53,13 @@ msf（未来Metasploit的简称）基本遵循PTES渗透测试标准。它将渗
 7：报告阶段
 渗透测试过程最终向客户组织提交，取得认可并成功获得合同付款的就是一份渗透测试报告（Reporting）。这份报告凝聚了之前所有阶段之中渗透测试团队所获取的关键情报信息、探测和发掘出的系统安全漏洞、成功渗透攻击的过程，以及造成业务影响后果的攻击途径，同时还要站在防御者的角度上，帮助他们分析安全防御体系中的薄弱环节、存在的问题，以及修补与升级技术方案。
 
-本系列教程以msf 4.15.45为基础，后期可能会以msf5为基础。
+本系列教程以msf 4.15.45为基础，后期可能会以msf5为基础。  
 ![](media/37bb6bcff95bfb01c8a447d8d4bc717b.jpg)
 
 msf核心代码为Ruby开发。这里需要解释，为什么作者以Ruby为核心语言开发？而不是python，perl等大众语言开发？
 
-**这里转载原作者的话：**
+### 这里转载原作者的话：  
+
 以下是在2005年左右写的。
 在框架的开发过程中，Metasploit开发人员不断被问到的一个反复出现的问题是为什么选择Ruby作为编程语言。为避免单独回答此问题，作者选择在本文档中解释其原因。
 
