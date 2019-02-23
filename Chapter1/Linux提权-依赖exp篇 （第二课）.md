@@ -1,8 +1,5 @@
-专注APT攻击与防御
-https://micropoor.blogspot.com/
-
-**exp注：**
-```
+### exp注：  
+```bash
 CVE-2017-1000367 [Sudo] (Sudo 1.8.6p7 - 1.8.20)
 CVE-2017-1000112 [a memory corruption due to UFO to non-UFO path switch]
 CVE-2017-7494 [Samba Remote execution] (Samba 3.5.0-4.6.4/4.5.10/4.4.14)
@@ -56,10 +53,10 @@ CVE-N/A [caps_to_root]  (2.6.34, 2.6.35, 2.6.36)
 CVE-2004-0077 [mremap_pte] (2.4.20, 2.2.24, 2.4.25, 2.4.26, 2.4.27)
 ```
 
-**已对外公开exp注：**
+### 已对外公开 exp 注：
 
-https://github.com/SecWiki/linux-kernel-exploits
-https://github.com/Kabot/Unix-Privilege-Escalation-Exploits-Pack/
+https://github.com/SecWiki/linux-kernel-exploits  
+https://github.com/Kabot/Unix-Privilege-Escalation-Exploits-Pack/  
 https://github.com/xairy/kernel-exploits
 
 >   Micropoor
