@@ -1,4 +1,4 @@
-### 微软官方做出如下解释：  
+**微软官方做出如下解释：**  
 > BITSAdmin是一个命令行工具，可用于创建下载或上传并监视其进度。
 
 **具体相关参数参见官方文档：**  
@@ -30,5 +30,6 @@ bitsadmin /transfer down /download /priority normal "http://192.168.1.115/robots
 ![](media/362901f0c27b936f6065b7b91b567395.jpg)
 
 
->   后者的话：不支持https协议。
+>   后者的话：不支持https协议。  
+> 
 >   Micropoor
