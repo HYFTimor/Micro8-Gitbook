@@ -85,9 +85,9 @@
 [第七十五课：基于白名单Mshta.exe执行payload第五季](Chapter1/71-80/75_基于白名单Mshta.exe执行payload第五季.md)  
 [第七十六课：基于白名单Compiler.exe执行payload第六季](Chapter1/71-80/76_基于白名单Compiler.exe执行payload第六季.md)  
 [第七十七课：基于白名单Csc.exe执行payload第七季](Chapter1/71-80/77_基于白名单Csc.exe执行payload第七季.md)  
-[第七十八课：基于白名单Msiexec执行payload第八季](Chapter1/78-80/78_基于白名单Msiexec执行payload第八季.md)  
-[第七十九课：基于白名单Regsvr32执行payload第九季](Chapter1/78-80/79_基于白名单Regsvr32执行payload第九季.md)  
-[第八十课：基于白名单Wmic执行payload第十季](Chapter1/78-80/80_基于白名单Wmic执行payload第十季.md)
+[第七十八课：基于白名单Msiexec执行payload第八季](Chapter1/71-80/78_基于白名单Msiexec执行payload第八季.md)  
+[第七十九课：基于白名单Regsvr32执行payload第九季](Chapter1/71-80/79_基于白名单Regsvr32执行payload第九季.md)  
+[第八十课：基于白名单Wmic执行payload第十季](Chapter1/71-80/80_基于白名单Wmic执行payload第十季.md)
 ### 81-90课：
 [第八十一课：基于白名单Rundll32.exe执行payload第十一季](Chapter1/81-90/81_基于白名单Rundll32.exe执行payload第十一季.md)  
 [第八十二课：基于白名单Odbcconf执行payload第十二季](Chapter1/81-90/82_基于白名单Odbcconf执行payload第十二季.md)  
