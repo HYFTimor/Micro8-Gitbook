@@ -22,13 +22,13 @@
         "prism",
         "-sharing",
         "sharing-plus",
-        "-expandable-chapters-small",
+        "expandable-chapters-small",
         "theme-comscore",
         "splitter",
-        "simple-page-toc",
-        "-copy-code-button",
         "github-buttons",
         "page-footer-ex",
+        "anchors",
+        "anchor-navigation-ex",
         "donate",
         "ad",
         "baidu-tongji",
@@ -55,11 +55,7 @@
           "update_label": "修订时间：",
           "update_format": "YYYY-MM-DD"
        },
-        "simple-page-toc": {
-            "maxDepth": 3,
-            "skipFirstH1": true
-        },
-        "github-buttons": {
+       "github-buttons": {
             "buttons": [{
               "user": "micro8",
               "repo": "Micro8-HTML",
@@ -67,6 +63,19 @@
               "size": "small",
               "count": true
               }]
+        },
+        "anchor-navigation-ex": {
+            "showLevel": false,
+            "associatedWithSummary": false,
+            "mode": "float",
+            "showGoTop":true,
+            "float": {
+                "floatIcon": "fa fa-anchor",
+                "showLevelIcon": true,
+                "level1Icon": "fa fa-hand-o-right",
+                "level2Icon": "fa fa-hand-o-right",
+                "level3Icon": "fa fa-hand-o-right"
+              }
         },
         "sharing": {
             "douban": false,
