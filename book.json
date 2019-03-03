@@ -20,8 +20,7 @@
         "search-plus",
         "-highlight",
         "prism",
-        "-sharing",
-        "sharing-plus",
+        "sharing",
         "expandable-chapters-small",
         "theme-comscore",
         "splitter",
@@ -30,6 +29,7 @@
         "anchors",
         "anchor-navigation-ex",
         "donate",
+        "terminal",
         "ad",
         "baidu-tongji",
         "ga"
@@ -40,7 +40,7 @@
         },
         "prism": {
             "css": [
-                "prism-themes/themes/prism-darcula.css"
+              "prism-themes/themes/prism-atom-dark.css"
             ]
         },
         "ga": {
@@ -77,30 +77,11 @@
                 "level3Icon": "fa fa-hand-o-right"
               }
         },
-        "sharing": {
-            "douban": false,
-            "facebook": false,
-            "google": false,
-            "hatenaBookmark": false,
-            "instapaper": false,
-            "line": false,
-            "linkedin": false,
-            "messenger": false,
-            "pocket": false,
-            "qq": false,
-            "qzone": false,
-            "stumbleupon": false,
-            "twitter": false,
-            "viber": false,
-            "vk": false,
-            "weibo": false,
-            "whatsapp": false,
-            "all": [
-                "facebook", "google", "twitter",
-                "weibo", "instapaper", "linkedin",
-                "pocket", "stumbleupon", "douban"
-              ]
-        },
+        "terminal": {
+           "copyButtons": true,
+           "fade": false,
+           "style": "flat"
+       },
         "donate": {
             "wechat": "./dashang.png",
             "title": "有读者问赞赏码，如下，自愿：",
